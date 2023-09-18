@@ -80,13 +80,12 @@ public class PlayerController : MonoBehaviour
             spriteRenderer.color = newColor;
 
             collider.isTrigger = true;
-
+            whatStops = 0;
             Debug.Log(spriteRenderer.color.a);
 
             yield return new WaitForSeconds(ghostMeter);
             isTransparent = false;
             collider.isTrigger = false;
-
             spriteRenderer.color = origColor;
 
         }

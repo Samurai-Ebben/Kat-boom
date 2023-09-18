@@ -8,6 +8,8 @@ public class PlayerMovementGridTst : MonoBehaviour
     private Vector3 origPos, targetPos;
     float timeToMove = 0.2f;
 
+
+    bool isRight = true;
     public LayerMask whatStops;
     // Update is called once per frame
     void Update()
@@ -17,13 +19,11 @@ public class PlayerMovementGridTst : MonoBehaviour
 
         if (Mathf.Abs(y) == 1 && !isMoving)
         {
-            if (!Physics2D.OverlapCircle(transform.position + new Vector3(0, y, 0) , 0.5f, whatStops))
-                StartCoroutine(Move(y * Vector3.up));
+            StartCoroutine(Move(y * Vector3.up));
         }
         if (Mathf.Abs(x) == 1 && !isMoving)
         {
-            if (!Physics2D.OverlapCircle(transform.position + new Vector3(0, y, 0), 0.2f, whatStops))
-                StartCoroutine(Move(x * Vector3.right));
+            StartCoroutine(Move(x * Vector3.right));
         }
     }
 
@@ -44,5 +44,13 @@ public class PlayerMovementGridTst : MonoBehaviour
         transform.position = targetPos;
 
         isMoving = false;
+    }
+
+    void FlipHori()
+    {
+        var currScale = transform.localScale;
+        currScale.x *= -1;
+        transform.localScale = currScale;
+        isRight = !isRight;
     }
 }
