@@ -11,18 +11,22 @@ public class PlayerController : MonoBehaviour
 
     public bool isTransparent = false;
     public float ghostMeter = 1.5f;
-
+    private Color origColor;
     bool isRight = true;
 
     SpriteRenderer spriteRenderer;
+    Collider2D collider;
 
     // Start is called before the first frame update
     void Start()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
         movePoint.parent = null;
-        spriteRenderer.color = Color.white;
 
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        collider = GetComponent<Collider2D>();
+
+        spriteRenderer.color = Color.white;
+        origColor = spriteRenderer.color;
     }
 
     // Update is called once per frame
@@ -50,16 +54,12 @@ public class PlayerController : MonoBehaviour
                 if (!Physics2D.OverlapCircle(movePoint.position + new Vector3(0, y, 0), 0.2f, whatStops))
                 {
                     movePoint.position += new Vector3(0, y, 0);
-
                 }
             }
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            isTransparent = true;
-            var newColor = new Color(255, 255, 255, 40);
-
             StartCoroutine(Transparent());
         }
     }
@@ -71,15 +71,23 @@ public class PlayerController : MonoBehaviour
 
     public IEnumerator Transparent()
     {
-        if(isTransparent)
+        if(!isTransparent)
         {
-            isTransparent = false;
-
-            spriteRenderer.color = new Color(255, 255, 255, 30);
-            Debug.Log(spriteRenderer.color.a);
-            yield return new WaitForSeconds(ghostMeter);
             isTransparent = true;
-            spriteRenderer.color = Color.white;
+
+            Color newColor = spriteRenderer.color;
+            newColor.a = 0.3f;
+            spriteRenderer.color = newColor;
+
+            collider.isTrigger = true;
+
+            Debug.Log(spriteRenderer.color.a);
+
+            yield return new WaitForSeconds(ghostMeter);
+            isTransparent = false;
+            collider.isTrigger = false;
+
+            spriteRenderer.color = origColor;
 
         }
     }
