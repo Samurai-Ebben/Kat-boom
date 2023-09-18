@@ -9,6 +9,9 @@ public class PlayerController : MonoBehaviour
     public Transform movePoint;
     public LayerMask whatStops;
 
+    public bool isTransparent = false;
+    public float ghostMeter = 1.5f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,9 +44,12 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    public IEnumerator Transparent()
     {
-        movePoint.position = transform.position;
+        yield return new WaitForSeconds(ghostMeter);
+        if(isTransparent)
+        {
+
+        }
     }
 }
