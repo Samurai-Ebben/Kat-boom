@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
             {
                 movePoint.position += new Vector3(x, 0, 0);
             }
-            if (Mathf.Abs(y) == 1)
+            else if (Mathf.Abs(y) == 1)
             {
                 movePoint.position += new Vector3(0, y, 0);
             }
