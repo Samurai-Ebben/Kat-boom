@@ -41,3 +41,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Layout
+    uniqueID: 2893933159
+    locked: 0
+  - name: Barrels
+    uniqueID: 415338423
+    locked: 0
+  - name: Bats
+    uniqueID: 3411936425
+    locked: 0
+  - name: Electricity
+    uniqueID: 3392689383
+    locked: 0
