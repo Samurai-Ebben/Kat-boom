@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     public float speed = 25f;
     public Transform movePoint;
-
+    public LayerMask whatStops;
 
     // Start is called before the first frame update
     void Start()
@@ -27,16 +27,23 @@ public class PlayerController : MonoBehaviour
         {
             if (Mathf.Abs(x) == 1)
             {
-                movePoint.position += new Vector3(x, 0, 0);
+                if(!Physics2D.OverlapCircle(movePoint.position + new Vector3(x,0,0), 0.2f, whatStops))
+                {
+                    movePoint.position += new Vector3(x, 0, 0);
+                }
             }
             else if (Mathf.Abs(y) == 1)
             {
-                movePoint.position += new Vector3(0, y, 0);
+                if (!Physics2D.OverlapCircle(movePoint.position + new Vector3(0, y, 0), 0.2f, whatStops))
+                {
+                    movePoint.position += new Vector3(0, y, 0);
+                }
             }
         }
-        
+    }
 
-        //int isDia = x * y != 0 ? 0 : 1;
-        //transform.position += new Vector3(x, y, 0) * isDia * Time.deltaTime * speed;
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        movePoint.position = transform.position;
     }
 }
