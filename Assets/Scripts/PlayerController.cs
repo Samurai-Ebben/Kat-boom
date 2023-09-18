@@ -12,9 +12,12 @@ public class PlayerController : MonoBehaviour
     public bool isTransparent = false;
     public float ghostMeter = 1.5f;
 
+    SpriteRenderer spriteRenderer;
+
     // Start is called before the first frame update
     void Start()
     {
+        spriteRenderer = GetComponent<SpriteRenderer>();
         movePoint.parent = null;
     }
 
@@ -43,13 +46,28 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            isTransparent = true;
+            spriteRenderer.color = new Color(255, 255, 255, 80);
+
+            //StartCoroutine(Transparent());
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        movePoint.position = transform.position;
     }
     public IEnumerator Transparent()
     {
-        yield return new WaitForSeconds(ghostMeter);
         if(isTransparent)
         {
-
+            isTransparent = false;
+            spriteRenderer.color = new Color(255, 255, 255, 80);
+            yield return new WaitForSeconds(ghostMeter);
+            isTransparent = true;
         }
     }
 }
