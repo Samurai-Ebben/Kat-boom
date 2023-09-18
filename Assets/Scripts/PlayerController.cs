@@ -50,7 +50,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             isTransparent = true;
-            spriteRenderer.color = new Color(255, 255, 255, 80);
+            spriteRenderer.color = new Color(255, 255, 255, 40);
 
             //StartCoroutine(Transparent());
         }
