@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
     public bool isTransparent = false;
     public float ghostMeter = 1.5f;
 
+    bool isRight = true;
+
     SpriteRenderer spriteRenderer;
 
     // Start is called before the first frame update
@@ -19,6 +21,8 @@ public class PlayerController : MonoBehaviour
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         movePoint.parent = null;
+        spriteRenderer.color = Color.white;
+
     }
 
     // Update is called once per frame
@@ -28,14 +32,17 @@ public class PlayerController : MonoBehaviour
         float y = Input.GetAxisRaw("Vertical");
 
         transform.position = Vector3.MoveTowards(transform.position, movePoint.position, speed * Time.deltaTime);
-
-        if(Vector3.Distance(transform.position, movePoint.position) <= 0.05f)
+        if (Vector3.Distance(transform.position, movePoint.position) <= 0.05f)
         {
             if (Mathf.Abs(x) == 1)
             {
                 if(!Physics2D.OverlapCircle(movePoint.position + new Vector3(x,0,0), 0.2f, whatStops))
                 {
                     movePoint.position += new Vector3(x, 0, 0);
+                    if (x > 0 && !isRight)
+                        FlipHori();
+                    else if (x < 0 && isRight)
+                        FlipHori();
                 }
             }
             else if (Mathf.Abs(y) == 1)
@@ -43,6 +50,7 @@ public class PlayerController : MonoBehaviour
                 if (!Physics2D.OverlapCircle(movePoint.position + new Vector3(0, y, 0), 0.2f, whatStops))
                 {
                     movePoint.position += new Vector3(0, y, 0);
+
                 }
             }
         }
@@ -50,9 +58,9 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             isTransparent = true;
-            spriteRenderer.color = new Color(255, 255, 255, 40);
+            var newColor = new Color(255, 255, 255, 40);
 
-            //StartCoroutine(Transparent());
+            StartCoroutine(Transparent());
         }
     }
 
@@ -60,14 +68,27 @@ public class PlayerController : MonoBehaviour
     {
         movePoint.position = transform.position;
     }
+
     public IEnumerator Transparent()
     {
         if(isTransparent)
         {
             isTransparent = false;
-            spriteRenderer.color = new Color(255, 255, 255, 80);
+
+            spriteRenderer.color = new Color(255, 255, 255, 30);
+            Debug.Log(spriteRenderer.color.a);
             yield return new WaitForSeconds(ghostMeter);
             isTransparent = true;
+            spriteRenderer.color = Color.white;
+
         }
+    }
+
+    void FlipHori()
+    {
+        var currScale = transform.localScale;
+        currScale.x *= -1;
+        transform.localScale = currScale;
+        isRight = !isRight;
     }
 }
