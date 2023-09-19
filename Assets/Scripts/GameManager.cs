@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     public   PlayerController player;
     public GameObject[] levels;
+    public GameObject[] lvlObjs;
+    private int currentLevel = 1;
 
     public int countBoxesLvl1 = 5;
     public int countBoxesLvl2 = 5;
@@ -34,11 +36,11 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         door1.SetActive(false);
+
         for (int i = 1; i < levels.Length; i++)
         {
             levels[i].SetActive(false);
         }
-
     }
 
     // Update is called once per frame
@@ -55,7 +57,10 @@ public class GameManager : MonoBehaviour
             Debug.Log("Open seseme.");
         }
 
-
+        if (player.lives > 0)
+        {
+            
+        }
     }
 
     public void NextLvl()
@@ -68,6 +73,7 @@ public class GameManager : MonoBehaviour
         lvl1 = false;
         lvl2 = true;
     }
+
     public void NextLvl2()
     {
         lvl3 = true;

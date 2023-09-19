@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     private Color origColor;
     bool isRight = true;
 
+    public int lives = 5;
 
     SpriteRenderer spriteRenderer;
     new Collider2D collider;
