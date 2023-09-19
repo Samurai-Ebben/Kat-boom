@@ -4487,8 +4487,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4298701660898009985, guid: 872edc6ecbbd02d48bf7d200c1c579f1, type: 3}
+      propertyPath: ghostMeter
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4298701660898009985, guid: 872edc6ecbbd02d48bf7d200c1c579f1, type: 3}
       propertyPath: isTransparent
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4298701660898009985, guid: 872edc6ecbbd02d48bf7d200c1c579f1, type: 3}
+      propertyPath: whatStops.m_Bits
+      value: 256
       objectReference: {fileID: 0}
     - target: {fileID: 7532112148895598775, guid: 872edc6ecbbd02d48bf7d200c1c579f1, type: 3}
       propertyPath: m_Size.x

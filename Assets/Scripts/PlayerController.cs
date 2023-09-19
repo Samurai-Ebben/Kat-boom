@@ -8,9 +8,10 @@ public class PlayerController : MonoBehaviour
     public float speed = 25f;
     public Transform movePoint;
     public LayerMask whatStops;
+    private LayerMask tempLayer;
 
     public bool isTransparent = false;
-    public float ghostMeter = 1.5f;
+    public float ghostMeter = 0.5f;
     private Color origColor;
     bool isRight = true;
 
@@ -26,6 +27,7 @@ public class PlayerController : MonoBehaviour
 
         spriteRenderer.color = Color.white;
         origColor = spriteRenderer.color;
+        tempLayer = whatStops;
     }
 
     void Update()
@@ -85,6 +87,8 @@ public class PlayerController : MonoBehaviour
             isTransparent = false;
             collider.isTrigger = false;
             spriteRenderer.color = origColor;
+            whatStops = tempLayer;
+            yield return new WaitForSeconds(ghostMeter * 6);
 
         }
     }
