@@ -13,8 +13,11 @@ public class PlayerController : MonoBehaviour
     public bool isTransparent = false;
     private bool canUseGM = true;
     public float ghostMeter = 0.5f;
+
     private Color origColor;
     bool isRight = true;
+
+
 
     SpriteRenderer spriteRenderer;
     new Collider2D collider;
@@ -71,11 +74,7 @@ public class PlayerController : MonoBehaviour
 
         if (other.gameObject == GameManager.Instance.door1)
         {
-            GameManager.Instance.levels[1].SetActive(true);
-            transform.position = GameManager.Instance.startPointlvl2.position;
-            movePoint.position = transform.position;
-            Camera.main.transform.position = new Vector3(20.36f, 0, -10);
-            GameManager.Instance.levels[0].SetActive(false);
+            GameManager.Instance.NextLvl();
         }
     }
 

@@ -15,7 +15,14 @@ public class GameManager : MonoBehaviour
     public GameObject door1; 
     public GameObject door2;
 
+    public Transform startPointlvl1;
     public Transform startPointlvl2;
+
+    public bool lvl1 = true;
+    public bool lvl2 = false;
+    public bool lvl3 = false;
+
+    public GameObject explosion;
 
     private void Awake()
     {
@@ -36,10 +43,36 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (countBoxesLvl1 <= 0)
+        if (countBoxesLvl1 <= 0 && lvl1)
         {
             door1.SetActive(true);
             Debug.Log("Open seseme.");
         }
+        if (countBoxesLvl2 <= 0 && lvl2)
+        {
+            door2.SetActive(true);
+            Debug.Log("Open seseme.");
+        }
+
+
+    }
+
+    public void NextLvl()
+    {
+        lvl2 = true;
+        levels[1].SetActive(true);
+        player.transform.position = startPointlvl2.position;
+        player.movePoint.position = transform.position;
+        Camera.main.transform.position = new Vector3(20.36f, 0, -10);
+        levels[0].SetActive(false);
+        lvl1 = false;
+    }
+
+    public IEnumerator Explode(Transform box)
+    {
+        yield return new WaitForSeconds(1);
+        var explosionPly = Instantiate(explosion, box.position, Quaternion.identity);
+        Destroy(explosionPly, 0.2f);
+        Debug.Log("kaboom");
     }
 }

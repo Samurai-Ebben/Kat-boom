@@ -7,12 +7,16 @@ public class Collision : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.name == "Player")
+        // the boxes should explode even when an explosion hit them
+        if(collision.gameObject.tag != "Enemy")
         {
             GameManager.Instance.countBoxesLvl1--;
             Debug.Log(GameManager.Instance.countBoxesLvl1);
             Destroy(gameObject, 1);
+            StartCoroutine(GameManager.Instance.Explode(transform));
+
         }
     }
+
 
 }
