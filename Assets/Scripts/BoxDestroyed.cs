@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Collision : MonoBehaviour
 {
+        public GameObject explosion;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -12,11 +13,13 @@ public class Collision : MonoBehaviour
         {
             GameManager.Instance.countBoxesLvl1--;
             Debug.Log(GameManager.Instance.countBoxesLvl1);
-            Destroy(gameObject, 1);
             StartCoroutine(GameManager.Instance.Explode(transform));
+            Destroy(gameObject, 1);
 
         }
     }
+
+
 
 
 }

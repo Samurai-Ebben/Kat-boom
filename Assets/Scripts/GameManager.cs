@@ -75,4 +75,15 @@ public class GameManager : MonoBehaviour
         Destroy(explosionPly, 0.2f);
         Debug.Log("kaboom");
     }
+
+    void Death()
+    {
+        if (lvl1)
+            player.transform.position = startPointlvl1.position;
+        if(lvl2)
+            player.transform.position = startPointlvl2.position;
+        if(lvl3)
+            player.transform.position = startPointlvl3.position;
+
+    }
 }
