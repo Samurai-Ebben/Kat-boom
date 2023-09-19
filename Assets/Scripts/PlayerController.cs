@@ -18,13 +18,11 @@ public class PlayerController : MonoBehaviour
     bool isRight = true;
 
 
-
     SpriteRenderer spriteRenderer;
     new Collider2D collider;
 
     void Start()
     {
-
         movePoint.parent = null;
 
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -40,28 +38,28 @@ public class PlayerController : MonoBehaviour
         float x = Input.GetAxisRaw("Horizontal");
         float y = Input.GetAxisRaw("Vertical");
 
-        //transform.position = Vector3.MoveTowards(transform.position, movePoint.position, speed * Time.deltaTime);
-        //if (Vector3.Distance(transform.position, movePoint.position) <= 0.05f)
-        //{
-        //    if (Mathf.Abs(x) == 1)
-        //    {
-        //        if(!Physics2D.OverlapCircle(movePoint.position + new Vector3(x,0,0), 0.2f, whatStops))
-        //        {
-        //            movePoint.position += new Vector3(x, 0, 0);
-        //            if (x > 0 && !isRight)
-        //                FlipHori();
-        //            else if (x < 0 && isRight)
-        //                FlipHori();
-        //        }
-        //    }
-        //    else if (Mathf.Abs(y) == 1)
-        //    {
-        //        if (!Physics2D.OverlapCircle(movePoint.position + new Vector3(0, y, 0), 0.2f, whatStops))
-        //        {
-        //            movePoint.position += new Vector3(0, y, 0);
-        //        }
-        //    }
-        //}
+        transform.position = Vector3.MoveTowards(transform.position, movePoint.position, speed * Time.deltaTime);
+        if (Vector3.Distance(transform.position, movePoint.position) <= 0.05f)
+        {
+            if (Mathf.Abs(x) == 1)
+            {
+                if (!Physics2D.OverlapCircle(movePoint.position + new Vector3(x, 0, 0), 0.2f, whatStops))
+                {
+                    movePoint.position += new Vector3(x, 0, 0);
+                    if (x > 0 && !isRight)
+                        FlipHori();
+                    else if (x < 0 && isRight)
+                        FlipHori();
+                }
+            }
+            else if (Mathf.Abs(y) == 1)
+            {
+                if (!Physics2D.OverlapCircle(movePoint.position + new Vector3(0, y, 0), 0.2f, whatStops))
+                {
+                    movePoint.position += new Vector3(0, y, 0);
+                }
+            }
+        }
 
         if (Input.GetKeyDown(KeyCode.Space) && canUseGM)
         {
@@ -76,6 +74,10 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject == GameManager.Instance.door1)
         {
             GameManager.Instance.NextLvl();
+        }
+        if (other.gameObject == GameManager.Instance.door2)
+        {
+            GameManager.Instance.NextLvl2();
         }
     }
 

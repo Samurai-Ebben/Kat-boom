@@ -60,13 +60,23 @@ public class GameManager : MonoBehaviour
 
     public void NextLvl()
     {
-        lvl2 = true;
         levels[1].SetActive(true);
         player.transform.position = startPointlvl2.position;
         player.movePoint.position = player.transform.position;
         Camera.main.transform.position = new Vector3(21.9699993f, 0, -10);
         levels[0].SetActive(false);
         lvl1 = false;
+        lvl2 = true;
+    }
+    public void NextLvl2()
+    {
+        lvl3 = true;
+        levels[2].SetActive(true);
+        player.transform.position = startPointlvl3.position;
+        player.movePoint.position = player.transform.position;
+        Camera.main.transform.position = new Vector3(22f, 13.2f, -10);
+        levels[1].SetActive(false);
+        lvl2 = false;
     }
 
     public IEnumerator Explode(Transform box)
