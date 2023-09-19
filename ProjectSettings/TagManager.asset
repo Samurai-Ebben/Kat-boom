@@ -42,3 +42,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Layout
+    uniqueID: 1296514315
+    locked: 0
+  - name: Barrels
+    uniqueID: 1997867601
+    locked: 0
+  - name: Bats
+    uniqueID: 3761885151
+    locked: 0
+  - name: Electricity
+    uniqueID: 655863513
+    locked: 0
+  - name: Cat Ghost
+    uniqueID: 1037238393
+    locked: 0
