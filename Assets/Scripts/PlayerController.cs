@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+
         movePoint.parent = null;
 
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -111,5 +112,7 @@ public class PlayerController : MonoBehaviour
         transform.localScale = currScale;
         isRight = !isRight;
     }
+
+    
 
 }
