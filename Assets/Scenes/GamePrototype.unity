@@ -470,7 +470,7 @@ Animator:
   m_GameObject: {fileID: 48047441}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 44f22295e864dc6438869aece9c4e49c, type: 2}
+  m_Controller: {fileID: 9100000, guid: 7e7c56d0b5ac4554ead9c3bfe272a748, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -619,7 +619,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.026220202, y: -0.03829789}
+  m_Offset: {x: -0.034558356, y: -0.4106989}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -630,7 +630,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.147218, y: 3.097715}
+  m_Size: {x: 0.8752527, y: 4.4973583}
   m_EdgeRadius: 0
 --- !u!1 &48831755
 GameObject:
@@ -957,7 +957,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 618294751788781990, guid: 7379bdc66c899174885fb7e0afdc5d22, type: 3}
       propertyPath: m_Name
-      value: Barrel1 (2)
+      value: Barrel4
       objectReference: {fileID: 0}
     - target: {fileID: 3114991437677990294, guid: 7379bdc66c899174885fb7e0afdc5d22, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1644,7 +1644,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 618294751788781990, guid: 7379bdc66c899174885fb7e0afdc5d22, type: 3}
       propertyPath: m_Name
-      value: Barrel1 (1)
+      value: Barrel3
       objectReference: {fileID: 0}
     - target: {fileID: 3114991437677990294, guid: 7379bdc66c899174885fb7e0afdc5d22, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3009,7 +3009,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 618294751788781990, guid: 7379bdc66c899174885fb7e0afdc5d22, type: 3}
       propertyPath: m_Name
-      value: Barrel1 (3)
+      value: Barrel5
       objectReference: {fileID: 0}
     - target: {fileID: 3114991437677990294, guid: 7379bdc66c899174885fb7e0afdc5d22, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7540,7 +7540,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 618294751788781990, guid: 7379bdc66c899174885fb7e0afdc5d22, type: 3}
       propertyPath: m_Name
-      value: Barrel1
+      value: Barrel2
       objectReference: {fileID: 0}
     - target: {fileID: 3114991437677990294, guid: 7379bdc66c899174885fb7e0afdc5d22, type: 3}
       propertyPath: m_LocalPosition.x
