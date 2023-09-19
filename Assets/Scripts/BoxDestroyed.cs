@@ -9,6 +9,8 @@ public class Collision : MonoBehaviour
     {
         if (collision.gameObject.name == "Player")
         {
+            GameManager.Instance.countBoxesLvl1--;
+            Debug.Log(GameManager.Instance.countBoxesLvl1);
             Destroy(gameObject, 1);
         }
     }

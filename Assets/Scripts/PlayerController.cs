@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     private LayerMask tempLayer;
 
     public bool isTransparent = false;
+    private bool canUseGM = true;
     public float ghostMeter = 0.5f;
     private Color origColor;
     bool isRight = true;
@@ -58,21 +59,31 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && canUseGM)
         {
             StartCoroutine(Transparent());
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         movePoint.position = transform.position;
+
+        if (other.gameObject == GameManager.Instance.door1)
+        {
+            GameManager.Instance.levels[1].SetActive(true);
+            transform.position = GameManager.Instance.startPointlvl2.position;
+            movePoint.position = transform.position;
+            Camera.main.transform.position = new Vector3(20.36f, 0, -10);
+            GameManager.Instance.levels[0].SetActive(false);
+        }
     }
 
     public IEnumerator Transparent()
     {
         if(!isTransparent)
         {
+            canUseGM = false;
             isTransparent = true;
 
             Color newColor = spriteRenderer.color;
@@ -80,7 +91,7 @@ public class PlayerController : MonoBehaviour
             spriteRenderer.color = newColor;
 
             collider.isTrigger = true;
-            whatStops = 0;
+            whatStops = LayerMask.NameToLayer("Walls");
             Debug.Log(spriteRenderer.color.a);
 
             yield return new WaitForSeconds(ghostMeter);
@@ -89,6 +100,7 @@ public class PlayerController : MonoBehaviour
             spriteRenderer.color = origColor;
             whatStops = tempLayer;
             yield return new WaitForSeconds(ghostMeter * 6);
+            canUseGM = true;
 
         }
     }
@@ -100,4 +112,5 @@ public class PlayerController : MonoBehaviour
         transform.localScale = currScale;
         isRight = !isRight;
     }
+
 }
