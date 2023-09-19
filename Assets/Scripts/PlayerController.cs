@@ -15,9 +15,8 @@ public class PlayerController : MonoBehaviour
     bool isRight = true;
 
     SpriteRenderer spriteRenderer;
-    Collider2D collider;
+    new Collider2D collider;
 
-    // Start is called before the first frame update
     void Start()
     {
         movePoint.parent = null;
@@ -29,7 +28,6 @@ public class PlayerController : MonoBehaviour
         origColor = spriteRenderer.color;
     }
 
-    // Update is called once per frame
     void Update()
     {
         float x = Input.GetAxisRaw("Horizontal");

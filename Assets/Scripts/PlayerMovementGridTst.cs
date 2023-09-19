@@ -11,7 +11,7 @@ public class PlayerMovementGridTst : MonoBehaviour
 
     bool isRight = true;
     public LayerMask whatStops;
-    // Update is called once per frame
+
     void Update()
     {
         float x = Input.GetAxisRaw("Horizontal");
