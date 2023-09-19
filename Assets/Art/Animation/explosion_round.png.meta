@@ -48,7 +48,15 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
+<<<<<<< Updated upstream
   spritePixelsToUnits: 48
+=======
+<<<<<<< HEAD
+  spritePixelsToUnits: 16
+=======
+  spritePixelsToUnits: 48
+>>>>>>> 7538da4bbb8aa65397126dc32ee46a38763b3297
+>>>>>>> Stashed changes
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -110,6 +118,20 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+      name: explosion_round_1
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 9
+        width: 35
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+=======
+>>>>>>> Stashed changes
       name: explosion_round_0
       rect:
         serializedVersion: 2
@@ -119,11 +141,22 @@ TextureImporter:
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
+<<<<<<< Updated upstream
+=======
+>>>>>>> 7538da4bbb8aa65397126dc32ee46a38763b3297
+>>>>>>> Stashed changes
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+      spriteID: 7a955d7570b59a040b2deab25af2758e
+      internalID: 1156059113
+=======
+>>>>>>> Stashed changes
       spriteID: 6345efb781b2bb140ac1170368c7eb42
       internalID: -423993104
       vertices: []
@@ -147,6 +180,10 @@ TextureImporter:
       bones: []
       spriteID: 4fbac2d60b56d974eba5a03385bf4a68
       internalID: -104048534
+<<<<<<< Updated upstream
+=======
+>>>>>>> 7538da4bbb8aa65397126dc32ee46a38763b3297
+>>>>>>> Stashed changes
       vertices: []
       indices: 
       edges: []
@@ -155,19 +192,44 @@ TextureImporter:
       name: explosion_round_2
       rect:
         serializedVersion: 2
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+        x: 101
+        y: 7
+        width: 38
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+=======
+>>>>>>> Stashed changes
         x: 96
         y: 0
         width: 48
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
+<<<<<<< Updated upstream
+=======
+>>>>>>> 7538da4bbb8aa65397126dc32ee46a38763b3297
+>>>>>>> Stashed changes
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
+<<<<<<< Updated upstream
       spriteID: 291c2234f8dd68e48aa07a0b9e0a2d3f
       internalID: -811307108
+=======
+<<<<<<< HEAD
+      spriteID: 70e2fece80e924741bb8ad55eb384764
+      internalID: -389824912
+=======
+      spriteID: 291c2234f8dd68e48aa07a0b9e0a2d3f
+      internalID: -811307108
+>>>>>>> 7538da4bbb8aa65397126dc32ee46a38763b3297
+>>>>>>> Stashed changes
       vertices: []
       indices: 
       edges: []
@@ -176,24 +238,63 @@ TextureImporter:
       name: explosion_round_3
       rect:
         serializedVersion: 2
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+        x: 147
+        y: 3
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+=======
+>>>>>>> Stashed changes
         x: 144
         y: 0
         width: 48
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
+<<<<<<< Updated upstream
+=======
+>>>>>>> 7538da4bbb8aa65397126dc32ee46a38763b3297
+>>>>>>> Stashed changes
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
+<<<<<<< Updated upstream
       spriteID: e2e8e19a5c1344649b1f9f38bb917db7
       internalID: -1440385203
+=======
+<<<<<<< HEAD
+      spriteID: fc220590a0f37a14795e8580fa1ab850
+      internalID: 371690069
+=======
+      spriteID: e2e8e19a5c1344649b1f9f38bb917db7
+      internalID: -1440385203
+>>>>>>> 7538da4bbb8aa65397126dc32ee46a38763b3297
+>>>>>>> Stashed changes
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+      name: explosion_round_8
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 13
+        width: 27
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+=======
+>>>>>>> Stashed changes
       name: explosion_round_4
       rect:
         serializedVersion: 2
@@ -203,13 +304,48 @@ TextureImporter:
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
+<<<<<<< Updated upstream
+=======
+>>>>>>> 7538da4bbb8aa65397126dc32ee46a38763b3297
+>>>>>>> Stashed changes
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
+<<<<<<< Updated upstream
       spriteID: a7a295e6c30d2844286b2bd9788cefe6
       internalID: -878137821
+=======
+<<<<<<< HEAD
+      spriteID: ff5f95ef97c812f449dd39e3cf0b2789
+      internalID: -812372766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: explosion_round_9
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 3
+        width: 45
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb4fc0de15f59a24aa551940546d26d1
+      internalID: -1697033207
+=======
+      spriteID: a7a295e6c30d2844286b2bd9788cefe6
+      internalID: -878137821
+>>>>>>> 7538da4bbb8aa65397126dc32ee46a38763b3297
+>>>>>>> Stashed changes
       vertices: []
       indices: 
       edges: []
@@ -225,11 +361,30 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+      explosion_round_0: 1487863382
+      explosion_round_1: 1156059113
+      explosion_round_2: -389824912
+      explosion_round_3: 371690069
+      explosion_round_4: 1256869411
+      explosion_round_5: 1723209043
+      explosion_round_6: -1002657190
+      explosion_round_7: 1434829387
+      explosion_round_8: -812372766
+      explosion_round_9: -1697033207
+=======
+>>>>>>> Stashed changes
       explosion_round_0: -423993104
       explosion_round_1: -104048534
       explosion_round_2: -811307108
       explosion_round_3: -1440385203
       explosion_round_4: -878137821
+<<<<<<< Updated upstream
+=======
+>>>>>>> 7538da4bbb8aa65397126dc32ee46a38763b3297
+>>>>>>> Stashed changes
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
