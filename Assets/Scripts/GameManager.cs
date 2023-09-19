@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -22,8 +23,15 @@ public class GameManager : MonoBehaviour
     public bool lvl1 = true;
     public bool lvl2 = false;
     public bool lvl3 = false;
+    public bool isDead = false;
+
+    public int lives = 5;
+    public int score = 0;
 
     public GameObject explosion;
+
+    public TextMeshProUGUI scoreTxt;
+    public TextMeshProUGUI livesTxt;
 
     private void Awake()
     {
@@ -55,9 +63,10 @@ public class GameManager : MonoBehaviour
             Debug.Log("Open seseme.");
         }
 
-        if (player.lives > 0)
+        if (player.lives > 0 && isDead)
         {
-            
+            Death();
+            isDead = false;
         }
     }
 
@@ -94,11 +103,12 @@ public class GameManager : MonoBehaviour
     void Death()
     {
         if (lvl1)
-            player.transform.position = startPointlvl1.position;
+            player.Teleport(startPointlvl1.position);
         if(lvl2)
-            player.transform.position = startPointlvl2.position;
-        if(lvl3)
-            player.transform.position = startPointlvl3.position;
-
+            player.Teleport(startPointlvl2.position);
+        if (lvl3)
+            player.Teleport(startPointlvl3.position);
+        lives--;
+        score -= 25;
     }
 }

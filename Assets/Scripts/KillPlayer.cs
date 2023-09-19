@@ -8,7 +8,7 @@ public class KillPlayer : MonoBehaviour
     {
         if (collision.gameObject.name == "Player")
         {
-            Destroy(collision.gameObject);
+            GameManager.Instance.isDead = true;
         }
     }
 }

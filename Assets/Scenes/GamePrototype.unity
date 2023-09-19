@@ -1018,9 +1018,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 372880488}
-  - component: {fileID: 372880489}
   - component: {fileID: 372880491}
+  - component: {fileID: 372880493}
   - component: {fileID: 372880490}
+  - component: {fileID: 372880492}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1043,35 +1044,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &372880489
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 372880487}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b6a94b8d5498fb43a67e4760d4c9882, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 200632654}
-  levels:
-  - {fileID: 640174060}
-  - {fileID: 1129314554}
-  - {fileID: 1785883205}
-  countBoxesLvl1: 5
-  countBoxesLvl2: 5
-  countBoxesLvl3: 5
-  door1: {fileID: 1939600307}
-  door2: {fileID: 667745069}
-  startPointlvl1: {fileID: 432953935}
-  startPointlvl2: {fileID: 1253805239}
-  startPointlvl3: {fileID: 160876964}
-  lvl1: 1
-  lvl2: 0
-  lvl3: 0
-  explosion: {fileID: 7710167678694776494, guid: fad65abff8de2744492511c00d3c98f3, type: 3}
 --- !u!212 &372880490
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1145,6 +1117,49 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &372880492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 372880487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b6a94b8d5498fb43a67e4760d4c9882, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 200632654}
+  levels:
+  - {fileID: 640174060}
+  - {fileID: 1129314554}
+  - {fileID: 1785883205}
+  countBoxesLvl1: 5
+  countBoxesLvl2: 5
+  countBoxesLvl3: 5
+  door1: {fileID: 1939600307}
+  door2: {fileID: 667745069}
+  startPointlvl1: {fileID: 432953935}
+  startPointlvl2: {fileID: 1253805239}
+  startPointlvl3: {fileID: 160876964}
+  lvl1: 1
+  lvl2: 0
+  lvl3: 0
+  isDead: 0
+  lives: 5
+  explosion: {fileID: 0}
+--- !u!114 &372880493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 372880487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c4bb3e14b798f645863329abcaa5383, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &417233809
 GameObject:
   m_ObjectHideFlags: 0
@@ -1985,7 +2000,7 @@ GameObject:
   - component: {fileID: 667745070}
   - component: {fileID: 667745071}
   m_Layer: 0
-  m_Name: BoundsBetweenLvl2&3
+  m_Name: Door2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12422,7 +12437,7 @@ GameObject:
   - component: {fileID: 1939600308}
   - component: {fileID: 1939600309}
   m_Layer: 0
-  m_Name: BoundsBetweenLvls1&2
+  m_Name: Door1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12981,7 +12996,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8639857802925269391, guid: 872edc6ecbbd02d48bf7d200c1c579f1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.232
+      value: -1.214
       objectReference: {fileID: 0}
     - target: {fileID: 8639857802925269391, guid: 872edc6ecbbd02d48bf7d200c1c579f1, type: 3}
       propertyPath: m_LocalPosition.z

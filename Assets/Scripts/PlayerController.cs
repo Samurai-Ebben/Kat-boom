@@ -116,6 +116,10 @@ public class PlayerController : MonoBehaviour
         isRight = !isRight;
     }
 
-    
+    public void Teleport(Vector3 position)
+    {
+        transform.position = position;
+        movePoint.position = transform.position;
+    }
 
 }
