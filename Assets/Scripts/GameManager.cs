@@ -64,7 +64,7 @@ public class GameManager : MonoBehaviour
         levels[1].SetActive(true);
         player.transform.position = startPointlvl2.position;
         player.movePoint.position = transform.position;
-        Camera.main.transform.position = new Vector3(20.36f, 0, -10);
+        Camera.main.transform.position = new Vector3(21.9699993f, 0, -10);
         levels[0].SetActive(false);
         lvl1 = false;
     }
