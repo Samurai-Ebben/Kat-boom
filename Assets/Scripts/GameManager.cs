@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
 
     public Transform startPointlvl1;
     public Transform startPointlvl2;
+    public Transform startPointlvl3;
 
     public bool lvl1 = true;
     public bool lvl2 = false;
