@@ -7,8 +7,6 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     public   PlayerController player;
     public GameObject[] levels;
-    public GameObject[] lvlObjs;
-    private int currentLevel = 1;
 
     public int countBoxesLvl1 = 5;
     public int countBoxesLvl2 = 5;
