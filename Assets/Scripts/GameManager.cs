@@ -29,10 +29,16 @@ public class GameManager : MonoBehaviour
     public int score = 0;
 
     public GameObject explosion;
+    public GameObject DoorElL1;
+    public GameObject DoorElL2;
+    public GameObject DoorElL3;
+
+    public GameObject DeadCat;
 
     public TextMeshProUGUI scoreTxt;
     public TextMeshProUGUI livesTxt;
 
+    private SpriteRenderer spriteRenderer;
     private void Awake()
     {
         Instance = this;
@@ -42,6 +48,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         door1.SetActive(false);
+        spriteRenderer = player.GetComponent<SpriteRenderer>();
 
         for (int i = 1; i < levels.Length; i++)
         {
@@ -55,17 +62,20 @@ public class GameManager : MonoBehaviour
         if (countBoxesLvl1 <= 0 && lvl1)
         {
             door1.SetActive(true);
+            DoorElL1.SetActive(false);
             Debug.Log("Open seseme.");
         }
         if (countBoxesLvl2 <= 0 && lvl2)
         {
             door2.SetActive(true);
+            DoorElL2.SetActive(false);
+
             Debug.Log("Open seseme.");
         }
 
         if (player.lives > 0 && isDead)
         {
-            Death();
+            StartCoroutine(Death());
             isDead = false;
         }
     }
@@ -100,14 +110,20 @@ public class GameManager : MonoBehaviour
         Debug.Log("kaboom");
     }
 
-    void Death()
+    IEnumerator Death()
     {
+        spriteRenderer.enabled = false;
+        var deadCat = Instantiate(DeadCat, player.transform.position, Quaternion.identity);
+        Destroy(deadCat, .7f);
+        yield return new WaitForSeconds(.8f);
         if (lvl1)
             player.Teleport(startPointlvl1.position);
         if(lvl2)
             player.Teleport(startPointlvl2.position);
         if (lvl3)
             player.Teleport(startPointlvl3.position);
+        spriteRenderer.enabled = true;
+
         lives--;
         score -= 25;
     }
