@@ -14,7 +14,8 @@ public class PlayerController : MonoBehaviour
 
     public bool isTransparent = false;
     private bool canUseGM = true;
-    public float ghostMeter = 0.5f;
+    public float ghostMeterTimer = 0.5f;
+    public float GMamount = 1;
 
     private Color origColor;
     bool isRight = true;
@@ -94,6 +95,8 @@ public class PlayerController : MonoBehaviour
             canUseGM = false;
             isTransparent = true;
 
+            GMamount = 0;
+
             Color newColor = spriteRenderer.color;
             newColor.a = 0.3f;
             spriteRenderer.color = newColor;
@@ -103,13 +106,13 @@ public class PlayerController : MonoBehaviour
             whatStops &= LayerMask.GetMask("Walls");
             Debug.Log(LayerMask.GetMask("Walls"));
             Debug.Log(spriteRenderer.color.a);
-
-            yield return new WaitForSeconds(ghostMeter);
+            yield return new WaitForSeconds(ghostMeterTimer);
             isTransparent = false;
             collider.isTrigger = false;
             spriteRenderer.color = origColor;
             whatStops = tempLayer;
-            yield return new WaitForSeconds(ghostMeter * 6);
+            yield return new WaitForSeconds(ghostMeterTimer * 6);
+            GMamount += 1;
             canUseGM = true;
 
         }

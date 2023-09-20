@@ -2,32 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    //SINGELTON
     public static GameManager Instance;
-    public   PlayerController player;
+
+    [Header ("--REFS--")]
+    public PlayerController player;
     public GameObject[] levels;
-
-    public int countBoxesLvl1 = 5;
-    public int countBoxesLvl2 = 5;
-    public int countBoxesLvl3 = 5;
-
-    public GameObject door1; 
-    public GameObject door2;
-
-    public Transform startPointlvl1;
-    public Transform startPointlvl2;
-    public Transform startPointlvl3;
-
-    public bool lvl1 = true;
-    public bool lvl2 = false;
-    public bool lvl3 = false;
-    public bool isDead = false;
-
-    public int lives = 5;
-    public int score = 0;
-
     public GameObject explosion;
     public GameObject DoorElL1;
     public GameObject DoorElL2;
@@ -35,8 +19,35 @@ public class GameManager : MonoBehaviour
 
     public GameObject DeadCat;
 
+    [Header("--Boxes Count--")]
+    public int countBoxesLvl1 = 5;
+    public int countBoxesLvl2 = 5;
+    public int countBoxesLvl3 = 5;
+
+    [Header("--REF Doors--")]
+    public GameObject door1; 
+    public GameObject door2;
+
+    [Header("--STARTING POINTS--")]
+    public Transform startPointlvl1;
+    public Transform startPointlvl2;
+    public Transform startPointlvl3;
+
+    [Header("--LEVEL SWITCHS --")]
+    public bool lvl1 = true;
+    public bool lvl2 = false;
+    public bool lvl3 = false;
+    public bool isDead = false;
+
+    [Header ("--UI MANAGEMENT--")]
+    public int lives = 5;
+    public int score = 0;
+
+
+    [Header("--UI--")]
     public TextMeshProUGUI scoreTxt;
     public TextMeshProUGUI livesTxt;
+    public Image ghostMeeterFill;
 
     private SpriteRenderer spriteRenderer;
     private void Awake()
@@ -59,6 +70,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        ghostMeeterFill.fillAmount = player.GMamount;
         if (countBoxesLvl1 <= 0 && lvl1)
         {
             door1.SetActive(true);
