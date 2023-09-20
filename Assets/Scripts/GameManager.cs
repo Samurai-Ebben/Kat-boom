@@ -131,6 +131,8 @@ public class GameManager : MonoBehaviour
     public IEnumerator Death()
     {
         spriteRenderer.enabled = false;
+        player.x = 0;
+        player.y = 0;
         var deadCat = Instantiate(DeadCat, player.transform.position, Quaternion.identity);
         Destroy(deadCat, .7f);
 
@@ -144,7 +146,8 @@ public class GameManager : MonoBehaviour
             player.Teleport(startPointlvl3.position);
 
         spriteRenderer.enabled = true;
-
+        player.x = Input.GetAxisRaw("Horizontal");
+        player.y = Input.GetAxisRaw("Vertical");
         hearts[player.lives - 1].fillAmount = 0;
         player.lives--;
         score -= 25;

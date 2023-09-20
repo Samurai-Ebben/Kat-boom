@@ -26,6 +26,9 @@ public class PlayerController : MonoBehaviour
     SpriteRenderer spriteRenderer;
     new Collider2D collider;
 
+    public float x;
+    public float y;
+
     void Start()
     {
         movePoint.parent = null;
@@ -40,8 +43,8 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        float x = Input.GetAxisRaw("Horizontal");
-        float y = Input.GetAxisRaw("Vertical");
+        x = Input.GetAxisRaw("Horizontal");
+        y = Input.GetAxisRaw("Vertical");
 
         transform.position = Vector3.MoveTowards(transform.position, movePoint.position, speed * Time.deltaTime);
         if (Vector3.Distance(transform.position, movePoint.position) <= 0.05f)
