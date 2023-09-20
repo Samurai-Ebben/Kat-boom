@@ -1271,7 +1271,6 @@ MonoBehaviour:
   lvl2: 0
   lvl3: 0
   isDead: 0
-  lives: 5
   score: 0
   scoreTxt: {fileID: 1892421556}
   livesTxt: {fileID: 1091702069}
@@ -8505,6 +8504,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5001389814254550627, guid: 7379bdc66c899174885fb7e0afdc5d22, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -14574,6 +14577,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 74f2d970894d1d54d8c17d482bc87c57, type: 3}
+    - target: {fileID: 901599635633190958, guid: 872edc6ecbbd02d48bf7d200c1c579f1, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4298701660898009985, guid: 872edc6ecbbd02d48bf7d200c1c579f1, type: 3}
       propertyPath: ghostMeter
       value: 0.5
