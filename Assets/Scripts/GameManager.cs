@@ -19,7 +19,6 @@ public class GameManager : MonoBehaviour
     public GameObject DoorElL3;
     public GameObject DeadCat;
     public Leaderboard leaderboard;
-    public GameObject highScore;
 
     [Header("--Boxes Count--")]
     public int countBoxesLvl1 = 5;
@@ -162,7 +161,6 @@ public class GameManager : MonoBehaviour
     {
         gameOverscrn.SetActive(true);
         Time.timeScale = 0;
-        highScore.SetActive(true);
     }
 
     public void Rstrt()
