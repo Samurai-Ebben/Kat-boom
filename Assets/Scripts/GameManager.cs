@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
     public GameObject DoorElL2;
     public GameObject DoorElL3;
     public GameObject DeadCat;
+    public Leaderboard leaderboard;
+    public GameObject highScore;
 
     [Header("--Boxes Count--")]
     public int countBoxesLvl1 = 5;
@@ -80,14 +82,12 @@ public class GameManager : MonoBehaviour
         {
             door1.SetActive(true);
             DoorElL1.SetActive(false);
-            Debug.Log("Open seseme.");
         }
         if (countBoxesLvl2 <= 0 && lvl2)
         {
             door2.SetActive(true);
             DoorElL2.SetActive(false);
 
-            Debug.Log("Open seseme.");
         }
 
         if (player.lives > 0 && isDead)
@@ -152,6 +152,7 @@ public class GameManager : MonoBehaviour
         if (player.lives <= 0)
         {
             player.lives = 0;
+            yield return leaderboard.SubmitScoreRoutine(score);
             GameOver();
         }
 
@@ -161,7 +162,7 @@ public class GameManager : MonoBehaviour
     {
         gameOverscrn.SetActive(true);
         Time.timeScale = 0;
-        Debug.Log("GameOver");
+        highScore.SetActive(true);
     }
 
     public void Rstrt()
