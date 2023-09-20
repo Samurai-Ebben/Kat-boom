@@ -1151,7 +1151,6 @@ MonoBehaviour:
   lvl2: 0
   lvl3: 0
   isDead: 0
-  lives: 5
   score: 0
   scoreTxt: {fileID: 1892421556}
   livesTxt: {fileID: 1091702069}
@@ -1162,6 +1161,7 @@ MonoBehaviour:
   - {fileID: 732476809}
   - {fileID: 676188745}
   - {fileID: 1150625714}
+  gameOverscrn: {fileID: 0}
 --- !u!114 &372880493
 MonoBehaviour:
   m_ObjectHideFlags: 0
