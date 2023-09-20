@@ -11,6 +11,7 @@ public class Collision : MonoBehaviour
         // the boxes should explode even when an explosion hit them
         if(collision.gameObject.tag != "Enemy")
         {
+            GameManager.Instance.score += 100;
             GameManager.Instance.countBoxesLvl1--;
             Debug.Log(GameManager.Instance.countBoxesLvl1);
             StartCoroutine(GameManager.Instance.Explode(transform));

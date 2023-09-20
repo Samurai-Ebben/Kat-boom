@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     public float speed = 25f;
     public Transform movePoint;
+
     public LayerMask whatStops;
     public LayerMask neverGoThrough;
     private LayerMask tempLayer;

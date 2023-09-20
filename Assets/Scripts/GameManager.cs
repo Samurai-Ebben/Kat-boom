@@ -16,7 +16,6 @@ public class GameManager : MonoBehaviour
     public GameObject DoorElL1;
     public GameObject DoorElL2;
     public GameObject DoorElL3;
-
     public GameObject DeadCat;
 
     [Header("--Boxes Count--")]
@@ -48,6 +47,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI scoreTxt;
     public TextMeshProUGUI livesTxt;
     public Image ghostMeeterFill;
+    public Image[] hearts = new Image[5];
 
     private SpriteRenderer spriteRenderer;
     private void Awake()
@@ -70,7 +70,10 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //UI
         ghostMeeterFill.fillAmount = player.GMamount;
+        scoreTxt.text = "Score: " + score.ToString();
+
         if (countBoxesLvl1 <= 0 && lvl1)
         {
             door1.SetActive(true);
@@ -136,6 +139,7 @@ public class GameManager : MonoBehaviour
             player.Teleport(startPointlvl3.position);
         spriteRenderer.enabled = true;
 
+        hearts[lives - 1].fillAmount = 0;
         lives--;
         score -= 25;
     }
