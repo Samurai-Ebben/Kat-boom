@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 22f30f982b5b00d458c94a78f2615ba2
+guid: 96331f701189e05408d3024c66da7324
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Tutorial Animation-Sheet_0
+      name: Tutorial Animation_0
       rect:
         serializedVersion: 2
         x: 0
@@ -124,14 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f672d72ed3e156b45a528041554da3b7
-      internalID: -500195310
+      spriteID: 56a3f3e933fa61847846f1716736ded3
+      internalID: -240239105
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tutorial Animation-Sheet_1
+      name: Tutorial Animation_1
       rect:
         serializedVersion: 2
         x: 320
@@ -145,14 +145,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a792a39a90e830e4285751ef55d589db
-      internalID: -1643409652
+      spriteID: 1f8c4532708485648bca15df06ec4828
+      internalID: -2026226654
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tutorial Animation-Sheet_2
+      name: Tutorial Animation_2
       rect:
         serializedVersion: 2
         x: 640
@@ -166,14 +166,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6fb7c0e5a889edf488ee15a933d95b4f
-      internalID: 1961791695
+      spriteID: 3edf012be9c68fa49a5569c959e96959
+      internalID: -760495511
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tutorial Animation-Sheet_3
+      name: Tutorial Animation_3
       rect:
         serializedVersion: 2
         x: 960
@@ -187,14 +187,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b1e120c77b23fe4498c1df51c762f281
-      internalID: -287613135
+      spriteID: 90088d4220295b547aa9165de4a942f1
+      internalID: 169797874
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tutorial Animation-Sheet_4
+      name: Tutorial Animation_4
       rect:
         serializedVersion: 2
         x: 1280
@@ -208,14 +208,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 53d2338445ec73b4c9853b9be1149839
-      internalID: -1968877945
+      spriteID: 87cd0a1a701e13542bf4f52d3ca343e9
+      internalID: -230795410
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tutorial Animation-Sheet_5
+      name: Tutorial Animation_5
       rect:
         serializedVersion: 2
         x: 1600
@@ -229,14 +229,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e3c250d35cd629c499e5a162e8290ed9
-      internalID: -635416952
+      spriteID: ba14e7083f0e5e3428f28e52dee87e7b
+      internalID: -710764741
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tutorial Animation-Sheet_6
+      name: Tutorial Animation_6
       rect:
         serializedVersion: 2
         x: 1920
@@ -250,14 +250,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5095ab12eb0034f48ad3a8002014cae0
-      internalID: -1740601571
+      spriteID: 6be2e1dbe4eebd24f979a3b75ae95582
+      internalID: 1083277894
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tutorial Animation-Sheet_7
+      name: Tutorial Animation_7
       rect:
         serializedVersion: 2
         x: 2240
@@ -271,14 +271,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 82e04f2760c0aa64d9264b60a14e296f
-      internalID: -277175883
+      spriteID: 33d72e68b39369245a628c3cdacaa15c
+      internalID: -861084440
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tutorial Animation-Sheet_8
+      name: Tutorial Animation_8
       rect:
         serializedVersion: 2
         x: 2560
@@ -292,14 +292,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5975e2ed5d9a21240a5ec423e6adff0d
-      internalID: 179850026
+      spriteID: 190f570def77f5b4eba541b3b01d1004
+      internalID: 2002477102
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tutorial Animation-Sheet_9
+      name: Tutorial Animation_9
       rect:
         serializedVersion: 2
         x: 2880
@@ -313,14 +313,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f8f1d968611dc624385f586f6d91a788
-      internalID: -1455372676
+      spriteID: da4b8af13d928814ab8c51ae558f8870
+      internalID: 1748604957
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tutorial Animation-Sheet_10
+      name: Tutorial Animation_10
       rect:
         serializedVersion: 2
         x: 3200
@@ -334,14 +334,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fdccdcde6e232b6458266ed5884d17e7
-      internalID: -1649881428
+      spriteID: b48215b41d829c5498d5f5864c59954a
+      internalID: -679713785
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tutorial Animation-Sheet_11
+      name: Tutorial Animation_11
       rect:
         serializedVersion: 2
         x: 3520
@@ -355,14 +355,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 731b7b2c6beda154e9d04e6c198660e3
-      internalID: -1551261430
+      spriteID: 11198b7b954528543b3011d930b31f83
+      internalID: 1052933208
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tutorial Animation-Sheet_12
+      name: Tutorial Animation_12
       rect:
         serializedVersion: 2
         x: 3840
@@ -376,14 +376,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 570cf1dd3e87c57428a7d13c0bd8049e
-      internalID: -1979504264
+      spriteID: 113320f2b5287a243b43dcb62f3a2bcb
+      internalID: 1556590507
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tutorial Animation-Sheet_13
+      name: Tutorial Animation_13
       rect:
         serializedVersion: 2
         x: 4160
@@ -397,14 +397,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cad1df4edf89e814fa4c36f1895f562c
-      internalID: -2051242142
+      spriteID: d21d8624616fda643885c455b1410657
+      internalID: 507619595
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tutorial Animation-Sheet_14
+      name: Tutorial Animation_14
       rect:
         serializedVersion: 2
         x: 4480
@@ -418,14 +418,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e9ab82122e8d0c2429450586680931fc
-      internalID: 527194568
+      spriteID: ae21058ff91c0674eaf2c314f76e52d2
+      internalID: 304150516
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tutorial Animation-Sheet_15
+      name: Tutorial Animation_15
       rect:
         serializedVersion: 2
         x: 4800
@@ -439,14 +439,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 40ad3206ccbc1334f8b0c213d8621188
-      internalID: 402557222
+      spriteID: a3f3b95689c990944aed70ad94749236
+      internalID: -1838476729
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tutorial Animation-Sheet_16
+      name: Tutorial Animation_16
       rect:
         serializedVersion: 2
         x: 5120
@@ -460,8 +460,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d67aa2a42cf69764483ede4fff07eb4d
-      internalID: -695064912
+      spriteID: 1e184a7b7fe67f94c8d9c0f62e2560ae
+      internalID: -1444606812
       vertices: []
       indices: 
       edges: []
@@ -477,23 +477,23 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Tutorial Animation-Sheet_0: -500195310
-      Tutorial Animation-Sheet_1: -1643409652
-      Tutorial Animation-Sheet_10: -1649881428
-      Tutorial Animation-Sheet_11: -1551261430
-      Tutorial Animation-Sheet_12: -1979504264
-      Tutorial Animation-Sheet_13: -2051242142
-      Tutorial Animation-Sheet_14: 527194568
-      Tutorial Animation-Sheet_15: 402557222
-      Tutorial Animation-Sheet_16: -695064912
-      Tutorial Animation-Sheet_2: 1961791695
-      Tutorial Animation-Sheet_3: -287613135
-      Tutorial Animation-Sheet_4: -1968877945
-      Tutorial Animation-Sheet_5: -635416952
-      Tutorial Animation-Sheet_6: -1740601571
-      Tutorial Animation-Sheet_7: -277175883
-      Tutorial Animation-Sheet_8: 179850026
-      Tutorial Animation-Sheet_9: -1455372676
+      Tutorial Animation_0: -240239105
+      Tutorial Animation_1: -2026226654
+      Tutorial Animation_10: -679713785
+      Tutorial Animation_11: 1052933208
+      Tutorial Animation_12: 1556590507
+      Tutorial Animation_13: 507619595
+      Tutorial Animation_14: 304150516
+      Tutorial Animation_15: -1838476729
+      Tutorial Animation_16: -1444606812
+      Tutorial Animation_2: -760495511
+      Tutorial Animation_3: 169797874
+      Tutorial Animation_4: -230795410
+      Tutorial Animation_5: -710764741
+      Tutorial Animation_6: 1083277894
+      Tutorial Animation_7: -861084440
+      Tutorial Animation_8: 2002477102
+      Tutorial Animation_9: 1748604957
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
