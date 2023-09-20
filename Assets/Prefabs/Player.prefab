@@ -137,8 +137,13 @@ MonoBehaviour:
   whatStops:
     serializedVersion: 2
     m_Bits: 256
+  neverGoThrough:
+    serializedVersion: 2
+    m_Bits: 0
   isTransparent: 0
-  ghostMeter: 1.5
+  ghostMeterTimer: 0.5
+  GMamount: 1
+  lives: 5
 --- !u!114 &9898526139853386
 MonoBehaviour:
   m_ObjectHideFlags: 0
