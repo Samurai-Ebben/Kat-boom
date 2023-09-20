@@ -93,7 +93,7 @@ public class GameManager : MonoBehaviour
             StartCoroutine(Death());
             isDead = false;
         }
-        else if(player.lives < 0&&isDead)
+        else if(player.lives < 1 && isDead)
         {
             GameOver();
         }
