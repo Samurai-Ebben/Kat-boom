@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -9,7 +10,7 @@ public class GameManager : MonoBehaviour
     //SINGELTON
     public static GameManager Instance;
 
-    [Header ("--REFS--")]
+    [Header("--REFS--")]
     public PlayerController player;
     public GameObject[] levels;
     public GameObject explosion;
@@ -24,7 +25,7 @@ public class GameManager : MonoBehaviour
     public int countBoxesLvl3 = 5;
 
     [Header("--REF Doors--")]
-    public GameObject door1; 
+    public GameObject door1;
     public GameObject door2;
 
     [Header("--STARTING POINTS--")]
@@ -38,7 +39,7 @@ public class GameManager : MonoBehaviour
     public bool lvl3 = false;
     public bool isDead = false;
 
-    [Header ("--UI MANAGEMENT--")]
+    [Header("--UI MANAGEMENT--")]
     public int score = 0;
 
 
@@ -95,7 +96,7 @@ public class GameManager : MonoBehaviour
             isDead = false;
         }
 
-        
+
     }
 
     public void NextLvl()
@@ -138,11 +139,11 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(.8f);
         if (lvl1)
             player.Teleport(startPointlvl1.position);
-        if(lvl2)
+        if (lvl2)
             player.Teleport(startPointlvl2.position);
         if (lvl3)
             player.Teleport(startPointlvl3.position);
-        
+
         spriteRenderer.enabled = true;
 
         hearts[player.lives - 1].fillAmount = 0;
@@ -161,5 +162,10 @@ public class GameManager : MonoBehaviour
         gameOverscrn.SetActive(true);
         Time.timeScale = 0;
         Debug.Log("GameOver");
+    }
+
+    public void Rstrt()
+    {
+        SceneManager.LoadScene(1);
     }
 }
