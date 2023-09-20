@@ -93,6 +93,10 @@ public class GameManager : MonoBehaviour
             StartCoroutine(Death());
             isDead = false;
         }
+        else if(player.lives < 0&&isDead)
+        {
+            GameOver();
+        }
     }
 
     public void NextLvl()
@@ -142,5 +146,11 @@ public class GameManager : MonoBehaviour
         hearts[lives - 1].fillAmount = 0;
         lives--;
         score -= 25;
+    }
+
+    void GameOver()
+    {
+        Time.timeScale = 0;
+        Debug.Log("GameOver");
     }
 }
