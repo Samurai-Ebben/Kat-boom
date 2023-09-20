@@ -25,17 +25,15 @@ public class Collision : MonoBehaviour
 
     void DestroyBox()
     {
-        GameManager.Instance.countBoxesLvl1--;
-        Debug.Log(GameManager.Instance.countBoxesLvl1);
         spriteRenderer.enabled = false;
         var explosionPly = Instantiate(explosion, transform.position, Quaternion.identity);
         Destroy(explosionPly, 0.25f);
-        Debug.Log("kaboom");
         Destroy(gameObject, 1f);
     }
 
     private void OnDestroy()
     {
+        GameManager.Instance.countBoxesLvl1--;
         GameManager.Instance.score += 100;
     }
 
