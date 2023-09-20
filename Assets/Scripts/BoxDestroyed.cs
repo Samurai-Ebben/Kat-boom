@@ -22,7 +22,7 @@ public class Collision : MonoBehaviour
             Debug.Log(GameManager.Instance.countBoxesLvl1);
             spriteRenderer.enabled = false;
             var explosionPly = Instantiate(explosion, transform.position, Quaternion.identity);
-            Destroy(explosionPly, 0.25f);
+            Destroy(explosionPly, 1f);
             Debug.Log("kaboom");
             Destroy(gameObject, 1f);
         }
