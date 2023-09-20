@@ -8,7 +8,9 @@ public class PlayerController : MonoBehaviour
     public float speed = 25f;
     public Transform movePoint;
     public LayerMask whatStops;
+    public LayerMask neverGoThrough;
     private LayerMask tempLayer;
+
 
     public bool isTransparent = false;
     private bool canUseGM = true;
@@ -71,7 +73,10 @@ public class PlayerController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         movePoint.position = transform.position;
-
+        if(other.gameObject.layer == neverGoThrough)
+        {
+            StartCoroutine(GameManager.Instance.Death());
+        }
         if (other.gameObject == GameManager.Instance.door1)
         {
             GameManager.Instance.NextLvl();
@@ -94,7 +99,10 @@ public class PlayerController : MonoBehaviour
             spriteRenderer.color = newColor;
 
             collider.isTrigger = true;
-            whatStops = LayerMask.NameToLayer("Walls");
+
+            whatStops = 0;
+            whatStops &= LayerMask.GetMask("Walls");
+
             Debug.Log(spriteRenderer.color.a);
 
             yield return new WaitForSeconds(ghostMeter);

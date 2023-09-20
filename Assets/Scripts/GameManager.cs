@@ -110,7 +110,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("kaboom");
     }
 
-    IEnumerator Death()
+    public IEnumerator Death()
     {
         spriteRenderer.enabled = false;
         var deadCat = Instantiate(DeadCat, player.transform.position, Quaternion.identity);
