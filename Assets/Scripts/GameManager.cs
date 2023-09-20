@@ -157,6 +157,7 @@ public class GameManager : MonoBehaviour
 
     }
 
+
     public void GameOver()
     {
         gameOverscrn.SetActive(true);
