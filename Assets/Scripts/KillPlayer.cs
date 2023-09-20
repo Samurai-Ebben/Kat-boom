@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class KillPlayer : MonoBehaviour
 {
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (collision.gameObject.name == "Player")
+        if (other.gameObject.name == "Player")
         {
             GameManager.Instance.isDead = true;
         }
