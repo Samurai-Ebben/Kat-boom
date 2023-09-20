@@ -34,4 +34,9 @@ public class Collision : MonoBehaviour
         Destroy(gameObject, 1f);
     }
 
+    private void OnDestroy()
+    {
+        GameManager.Instance.score += 100;
+    }
+
 }
