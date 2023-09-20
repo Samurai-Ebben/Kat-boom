@@ -87,6 +87,10 @@ public class PlayerController : MonoBehaviour
         {
             GameManager.Instance.NextLvl2();
         }
+        if(other.gameObject.tag == "explosion")
+        {
+            StartCoroutine(GameManager.Instance.Death());
+        }
     }
 
     public IEnumerator Transparent()
