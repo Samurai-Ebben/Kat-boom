@@ -167,5 +167,12 @@ public class GameManager : MonoBehaviour
     public void Rstrt()
     {
         SceneManager.LoadScene(1);
+        if(Time.timeScale != 1)
+            Time.timeScale = 1;
+    }
+
+    public void menu()
+    {
+        SceneManager.LoadScene(0);
     }
 }
