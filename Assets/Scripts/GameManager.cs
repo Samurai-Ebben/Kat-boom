@@ -39,7 +39,6 @@ public class GameManager : MonoBehaviour
     public bool isDead = false;
 
     [Header ("--UI MANAGEMENT--")]
-    public int lives = 5;
     public int score = 0;
 
 
@@ -48,6 +47,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI livesTxt;
     public Image ghostMeeterFill;
     public Image[] hearts = new Image[5];
+    public GameObject gameOverscrn;
 
     private SpriteRenderer spriteRenderer;
     private void Awake()
@@ -58,6 +58,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gameOverscrn.SetActive(false);
         door1.SetActive(false);
         spriteRenderer = player.GetComponent<SpriteRenderer>();
 
@@ -93,10 +94,8 @@ public class GameManager : MonoBehaviour
             StartCoroutine(Death());
             isDead = false;
         }
-        else if(player.lives < 1 && isDead)
-        {
-            GameOver();
-        }
+
+        
     }
 
     public void NextLvl()
@@ -134,6 +133,8 @@ public class GameManager : MonoBehaviour
         spriteRenderer.enabled = false;
         var deadCat = Instantiate(DeadCat, player.transform.position, Quaternion.identity);
         Destroy(deadCat, .7f);
+
+
         yield return new WaitForSeconds(.8f);
         if (lvl1)
             player.Teleport(startPointlvl1.position);
@@ -141,15 +142,23 @@ public class GameManager : MonoBehaviour
             player.Teleport(startPointlvl2.position);
         if (lvl3)
             player.Teleport(startPointlvl3.position);
+        
         spriteRenderer.enabled = true;
 
-        hearts[lives - 1].fillAmount = 0;
-        lives--;
+        hearts[player.lives - 1].fillAmount = 0;
+        player.lives--;
         score -= 25;
+        if (player.lives <= 0)
+        {
+            player.lives = 0;
+            GameOver();
+        }
+
     }
 
-    void GameOver()
+    public void GameOver()
     {
+        gameOverscrn.SetActive(true);
         Time.timeScale = 0;
         Debug.Log("GameOver");
     }
