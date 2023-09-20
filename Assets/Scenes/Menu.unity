@@ -422,7 +422,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuCanvas: {fileID: 41151912}
-  HSCanvas: {fileID: 0}
   explosion: {fileID: 7710167678694776494, guid: fad65abff8de2744492511c00d3c98f3, type: 3}
   strBtnTransform: {fileID: 486906630}
 --- !u!1 &311115953
@@ -884,6 +883,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   leaderBoard: {fileID: 110537867}
+  playerNameIF: {fileID: 0}
 --- !u!1 &1443574093
 GameObject:
   m_ObjectHideFlags: 0
