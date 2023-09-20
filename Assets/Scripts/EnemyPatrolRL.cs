@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEditor.Rendering;
 using UnityEngine;
 
-public class EnemyPatrol : MonoBehaviour
+public class EnemyPatrolRL : MonoBehaviour
 {
     public GameObject pointA;
     public GameObject pointB;
