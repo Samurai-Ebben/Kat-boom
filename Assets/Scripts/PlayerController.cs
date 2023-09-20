@@ -100,9 +100,8 @@ public class PlayerController : MonoBehaviour
 
             collider.isTrigger = true;
 
-            whatStops = 0;
             whatStops &= LayerMask.GetMask("Walls");
-
+            Debug.Log(LayerMask.GetMask("Walls"));
             Debug.Log(spriteRenderer.color.a);
 
             yield return new WaitForSeconds(ghostMeter);
