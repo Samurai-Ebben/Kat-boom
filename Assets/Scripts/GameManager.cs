@@ -199,7 +199,7 @@ public class GameManager : MonoBehaviour
         HUD.SetActive(false);
         //Time.timeScale = 0;
         player.canMove = false;
-        //if(text =="GameOver")
+        if(text =="GameOver")
             //Show animation
     }
 
