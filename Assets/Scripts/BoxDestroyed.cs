@@ -16,9 +16,9 @@ public class Collision : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag != "Enemy")
+        if (collision.gameObject.tag != "Enemy")
         {
             spriteRenderer.enabled = false;
             GameObject titik = Instantiate(tiktikBarrale, transform.position, Quaternion.identity);
