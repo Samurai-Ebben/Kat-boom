@@ -197,7 +197,8 @@ public class GameManager : MonoBehaviour
         title.text = text;
         gameOverscrn.SetActive(true);
         HUD.SetActive(false);
-        Time.timeScale = 0;
+        //Time.timeScale = 0;
+        player.canMove = false;
         //if(text =="GameOver")
             //Show animation
     }
