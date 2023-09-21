@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     public GameObject DoorElL3;
     public GameObject DeadCat;
     public Leaderboard leaderboard;
+    private DiaTrigger diafst;
 
     [Header("--Boxes Count--")]
     public int countBoxesLvl1 = 5;
@@ -65,6 +66,8 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        diafst = GetComponent<DiaTrigger>();
+        diafst.TriggerDia();
         HUD.SetActive(true);
         gameOverscrn.SetActive(false);
         door1.SetActive(false);
