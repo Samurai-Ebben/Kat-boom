@@ -77,6 +77,8 @@ public class GameManager : MonoBehaviour
         HUD.SetActive(true);
         gameOverscrn.SetActive(false);
         door1.SetActive(false);
+        door2.SetActive(false);
+
         for (int i = 1; i < levels.Length; i++)
         {
             levels[i].SetActive(false);
@@ -102,6 +104,7 @@ public class GameManager : MonoBehaviour
 
             DoorElL1.SetActive(false);
         }
+
         if (countBoxesLvl2 <= 0 && lvl2)
         {
             door2.SetActive(true);
@@ -122,7 +125,6 @@ public class GameManager : MonoBehaviour
             ghostMeeterFill.fillAmount = Mathf.MoveTowards(ghostMeeterFill.fillAmount, 1, Time.deltaTime);
             player.GMamount = Mathf.MoveTowards(player.GMamount, 1, Time.deltaTime * 0.26f);
         }
-
 
     }
 
