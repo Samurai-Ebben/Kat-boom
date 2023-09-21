@@ -3117,10 +3117,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dia:
     sentences:
-    - Meeoowwww
-    - '"Where is my yarn ball!"'
-    - 'MeW MEEWWW '
-    - '"I''ll Destroy everythin until i find it"'
+    - Meeoowwww!?
+    - '"Where is my yarn ball!?"'
+    - MeW MEEWWW!!
+    - '"I''ll Destroy everythin until i find it!!"'
+    - Meow.
+    - '"I need it to rest in peace."'
 --- !u!1001 &375173499
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15517,6 +15519,102 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3114991437677990294, guid: 7379bdc66c899174885fb7e0afdc5d22, type: 3}
   m_PrefabInstance: {fileID: 1539895144}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1556337902
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1556337903}
+  - component: {fileID: 1556337904}
+  - component: {fileID: 1556337905}
+  m_Layer: 0
+  m_Name: DialougTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1556337903
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1556337902}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.3, y: -3.48, z: 0}
+  m_LocalScale: {x: 1.9988, y: 1.9988, z: 1.9988}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1785883206}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1556337904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1556337902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 598e6e59cef147746b10923acf23da8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dia:
+    sentences:
+    - Mooeew?!
+    - '"Yarn bal?!l"'
+    - naaWoWW!
+    - '"it must be here somewhere!"'
+--- !u!61 &1556337905
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1556337902}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &1563374216
 GameObject:
   m_ObjectHideFlags: 0
@@ -15545,15 +15643,15 @@ RectTransform:
   m_GameObject: {fileID: 1563374216}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.39012, y: 0.39012, z: 0.39012}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2099910260}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -40.88, y: -0.7900009}
-  m_SizeDelta: {x: 281.8, y: 62.71}
+  m_AnchoredPosition: {x: -41.67, y: -0.040000916}
+  m_SizeDelta: {x: 654.16, y: 158.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1563374218
 Animator:
@@ -15639,7 +15737,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 0
+  m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
@@ -16883,6 +16981,7 @@ Transform:
   - {fileID: 613915344}
   - {fileID: 1502424219}
   - {fileID: 160876964}
+  - {fileID: 1556337903}
   m_Father: {fileID: 1295397185}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1839735485 &1785883208
@@ -23312,6 +23411,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 1563374219}
+  animator: {fileID: 2053273809}
 --- !u!1 &2013393249
 GameObject:
   m_ObjectHideFlags: 0

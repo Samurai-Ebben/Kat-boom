@@ -67,7 +67,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         diafst = GetComponent<DiaTrigger>();
-        diafst.TriggerDia();
+        Invoke("DiaPlay", 0.01f);
         HUD.SetActive(true);
         gameOverscrn.SetActive(false);
         door1.SetActive(false);
@@ -77,6 +77,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    void DiaPlay()
+    {
+        diafst.TriggerDia();
+
+    }
     // Update is called once per frame
     void Update()
     {

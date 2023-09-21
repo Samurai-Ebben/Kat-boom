@@ -11,6 +11,12 @@ public class DiaManager : MonoBehaviour
     private Queue<string> sentences;
     public static DiaManager Instance;
 
+    public Animator animator;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -18,19 +24,20 @@ public class DiaManager : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.anyKeyDown)
         {
             DisplayNxtSentence();
         }
     }
-    internal void StartDia(Dialouge dia)
+    public void StartDia(Dialouge dia)
     {
-        Time.timeScale = 0;
+        animator.SetBool("IsOpen", true);
+        //Time.timeScale = 0;
         GameManager.Instance.player.canMove = false;
 
         sentences.Clear();
 
-        foreach (var sentence in sentences) 
+        foreach (var sentence in dia.sentences) 
         {
             sentences.Enqueue(sentence);
         }
@@ -47,11 +54,24 @@ public class DiaManager : MonoBehaviour
         }
 
         var sentence = sentences.Dequeue();
-        text.text = sentence;
+        StopAllCoroutines();
+        StartCoroutine(TypeSent(sentence));
+    }
+
+    IEnumerator TypeSent (string sentence)
+    {
+        text.text = "";
+        foreach(char letter in sentence.ToCharArray())
+        {
+            text.text += letter;
+            yield return null;
+        }
     }
 
     public void EndDia()
     {
-         
+        animator.SetBool("IsOpen", false);
+        GameManager.Instance.player.canMove = true;
+
     }
 }
