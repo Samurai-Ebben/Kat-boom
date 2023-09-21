@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     public GameObject DoorElL3;
     public GameObject DeadCat;
     public Leaderboard leaderboard;
+    public GameObject victoryScreen;
     private DiaTrigger diafst;
 
     [Header("--Boxes Count--")]
@@ -199,7 +200,8 @@ public class GameManager : MonoBehaviour
         HUD.SetActive(false);
         //Time.timeScale = 0;
         player.canMove = false;
-        if(text =="GameOver")
+        if (text == "GameOver")
+            victoryScreen.SetActive(true);
             //Show animation
     }
 
