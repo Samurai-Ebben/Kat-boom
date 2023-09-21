@@ -5818,7 +5818,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 687931612}
   m_CullTransparentMesh: 1
---- !u!1001 &693107325
+--- !u!1001 &716411260
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -5836,11 +5836,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3114991437677990294, guid: 7379bdc66c899174885fb7e0afdc5d22, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.933
+      value: -4.943
       objectReference: {fileID: 0}
     - target: {fileID: 3114991437677990294, guid: 7379bdc66c899174885fb7e0afdc5d22, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.105
+      value: 4.133
       objectReference: {fileID: 0}
     - target: {fileID: 3114991437677990294, guid: 7379bdc66c899174885fb7e0afdc5d22, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5875,27 +5875,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7188715800943422881, guid: 7379bdc66c899174885fb7e0afdc5d22, type: 3}
-      propertyPath: m_Size.y
-      value: 1.0332592
-      objectReference: {fileID: 0}
-    - target: {fileID: 7188715800943422881, guid: 7379bdc66c899174885fb7e0afdc5d22, type: 3}
       propertyPath: m_Offset.x
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7188715800943422881, guid: 7379bdc66c899174885fb7e0afdc5d22, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.016629577
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7379bdc66c899174885fb7e0afdc5d22, type: 3}
---- !u!4 &693107326 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3114991437677990294, guid: 7379bdc66c899174885fb7e0afdc5d22, type: 3}
-  m_PrefabInstance: {fileID: 693107325}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &732476807
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24341,6 +24328,11 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 10.827149}
   m_EdgeRadius: 0
+--- !u!4 &1964469965 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3114991437677990294, guid: 7379bdc66c899174885fb7e0afdc5d22, type: 3}
+  m_PrefabInstance: {fileID: 716411260}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1966334574
 GameObject:
   m_ObjectHideFlags: 0
@@ -27375,7 +27367,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4894740384330292085, guid: 10500b0a32d56764ea9bef3306537b06, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 7.51449
+      value: 7.514496
       objectReference: {fileID: 0}
     - target: {fileID: 4894740384330292085, guid: 10500b0a32d56764ea9bef3306537b06, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -27787,7 +27779,7 @@ PrefabInstance:
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 2968793055429996841, guid: 052fad82051e4094e99ad57ac9c3258b, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 693107326}
+      addedObject: {fileID: 1964469965}
     - targetCorrespondingSourceObject: {fileID: 2968793055429996841, guid: 052fad82051e4094e99ad57ac9c3258b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1387311054}
