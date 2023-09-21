@@ -100,6 +100,17 @@ public class PlayerController : MonoBehaviour
         {
             StartCoroutine(GameManager.Instance.Death());
         }
+        if(other.gameObject.tag == "Enemy")
+        {
+            GameManager.Instance.batHurt = other.gameObject.GetComponent<AudioSource>();
+            GameManager.Instance.batHurt.Play();
+        }
+        if(other.gameObject.tag == "El")
+        {
+            GameManager.Instance.elHurt = other.gameObject.GetComponent<AudioSource>();
+            GameManager.Instance.elHurt.Play();
+
+        }
     }
 
     public IEnumerator Transparent()

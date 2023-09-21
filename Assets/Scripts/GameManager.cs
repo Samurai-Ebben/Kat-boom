@@ -55,6 +55,12 @@ public class GameManager : MonoBehaviour
     [Header("--GAMEOVERUI--")]
     public TextMeshProUGUI title;
 
+    [Header("--AUDIO--")]
+    public AudioSource doorSfx;
+    public AudioSource doorSfx2;
+    public AudioSource elHurt;
+    public AudioSource batHurt;
+
 
     public bool GMready { get { return ghostMeeterFill.fillAmount >= 1; } }
 
@@ -92,11 +98,15 @@ public class GameManager : MonoBehaviour
         if (countBoxesLvl1 <= 0 && lvl1)
         {
             door1.SetActive(true);
+            doorSfx.Play();
+
             DoorElL1.SetActive(false);
         }
         if (countBoxesLvl2 <= 0 && lvl2)
         {
             door2.SetActive(true);
+            doorSfx.Play();
+
             DoorElL2.SetActive(false);
 
         }

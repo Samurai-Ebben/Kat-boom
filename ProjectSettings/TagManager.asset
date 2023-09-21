@@ -7,6 +7,8 @@ TagManager:
   - Enemy
   - explosion
   - tick
+  - El
+  - Bat
   layers:
   - Default
   - TransparentFX

@@ -7,6 +7,8 @@ public class Collision : MonoBehaviour
 {
     public GameObject explosion;
     public GameObject tiktikBarrale;
+    public AudioSource exhurt;
+
     SpriteRenderer spriteRenderer;
 
     private void Start()
@@ -28,6 +30,7 @@ public class Collision : MonoBehaviour
     void DestroyBox()
     {
         var explosionPly = Instantiate(explosion, transform.position, Quaternion.identity);
+        exhurt.Play();
         Destroy(explosionPly, 0.25f);
         Destroy(gameObject, 1f);
     }
