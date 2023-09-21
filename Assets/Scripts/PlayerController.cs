@@ -23,7 +23,9 @@ public class PlayerController : MonoBehaviour
 
     public int lives = 5;
 
-    SpriteRenderer spriteRenderer;
+    public bool canMove = true;
+
+    public SpriteRenderer spriteRenderer;
     new Collider2D collider;
 
     public float x;
@@ -33,7 +35,7 @@ public class PlayerController : MonoBehaviour
     {
         movePoint.parent = null;
 
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         collider = GetComponent<Collider2D>();
 
         spriteRenderer.color = Color.white;
@@ -46,6 +48,8 @@ public class PlayerController : MonoBehaviour
         x = Input.GetAxisRaw("Horizontal");
         y = Input.GetAxisRaw("Vertical");
 
+        if (!canMove)
+            return;
         transform.position = Vector3.MoveTowards(transform.position, movePoint.position, speed * Time.deltaTime);
         if (Vector3.Distance(transform.position, movePoint.position) <= 0.05f)
         {
@@ -134,6 +138,10 @@ public class PlayerController : MonoBehaviour
         isRight = !isRight;
     }
 
+    public void TakeDamage() {
+        GameManager.Instance.hearts[lives - 1].fillAmount = 0;
+        lives--;
+    }
     public void Teleport(Vector3 position)
     {
         transform.position = position;
