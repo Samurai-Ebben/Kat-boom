@@ -51,6 +51,9 @@ public class GameManager : MonoBehaviour
     public Image[] hearts = new Image[5];
     public GameObject gameOverscrn;
 
+    [Header("--GAMEOVERUI--")]
+    public TextMeshProUGUI title;
+
     private void Awake()
     {
         Instance = this;
