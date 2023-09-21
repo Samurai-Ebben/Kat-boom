@@ -6,6 +6,7 @@ using UnityEngine.UIElements;
 public class Collision : MonoBehaviour
 {
     public GameObject explosion;
+    public GameObject tiktikBarrale;
     SpriteRenderer spriteRenderer;
 
     private void Start()
@@ -15,16 +16,17 @@ public class Collision : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-
         if(collision.gameObject.tag != "Enemy")
         {
+            spriteRenderer.enabled = false;
+            GameObject titik = Instantiate(tiktikBarrale, transform.position, Quaternion.identity);
+            Destroy(titik, 1);
             Invoke("DestroyBox", 1f);
         }
     }
 
     void DestroyBox()
     {
-        spriteRenderer.enabled = false;
         var explosionPly = Instantiate(explosion, transform.position, Quaternion.identity);
         Destroy(explosionPly, 0.25f);
         Destroy(gameObject, 1f);
