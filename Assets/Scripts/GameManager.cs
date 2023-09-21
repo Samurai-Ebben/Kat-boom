@@ -130,10 +130,6 @@ public class GameManager : MonoBehaviour
         player.spriteRenderer.enabled = false;
         player.canMove = false;
         var deadCat = Instantiate(DeadCat, player.transform.position, Quaternion.identity);
-        Destroy(deadCat, .7f);
-
-
-        yield return new WaitForSeconds(.8f);
         if (lvl1)
             player.Teleport(startPointlvl1.position);
         if (lvl2)
@@ -141,11 +137,17 @@ public class GameManager : MonoBehaviour
         if (lvl3)
             player.Teleport(startPointlvl3.position);
 
+        Destroy(deadCat, .7f);
+
+        yield return new WaitForSeconds(.8f);
+
         player.spriteRenderer.enabled = true;
         player.canMove = true;
         hearts[player.lives - 1].fillAmount = 0;
         player.lives--;
         score -= 25;
+
+
         if (player.lives <= 0)
         {
             player.lives = 0;

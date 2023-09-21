@@ -138,6 +138,10 @@ public class PlayerController : MonoBehaviour
         isRight = !isRight;
     }
 
+    public void TakeDamage() {
+        GameManager.Instance.hearts[lives - 1].fillAmount = 0;
+        lives--;
+    }
     public void Teleport(Vector3 position)
     {
         transform.position = position;
