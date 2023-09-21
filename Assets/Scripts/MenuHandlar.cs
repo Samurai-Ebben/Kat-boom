@@ -27,7 +27,6 @@ public class MenuHandlar : MonoBehaviour
     public void LoadScenesOV()
     {
         SceneManager.LoadScene(1);
-
     }
 
 
