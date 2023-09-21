@@ -2876,7 +2876,7 @@ MonoBehaviour:
   DeadCat: {fileID: 7888274223112921740, guid: 8423df70c34f08d46adde5a2281eef30, type: 3}
   leaderboard: {fileID: 54786614}
   countBoxesLvl1: 10
-  countBoxesLvl2: 5
+  countBoxesLvl2: 10
   countBoxesLvl3: 5
   door1: {fileID: 1939600307}
   door2: {fileID: 667745069}
