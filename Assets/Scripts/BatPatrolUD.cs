@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyPatrolUD : MonoBehaviour
+public class BatPatrolUD : MonoBehaviour
 {
     public GameObject pointA;
     public GameObject pointB;
