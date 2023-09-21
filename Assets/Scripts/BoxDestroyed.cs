@@ -16,7 +16,6 @@ public class Collision : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
 
-        // the boxes should explode even when an explosion hit them
         if(collision.gameObject.tag != "Enemy")
         {
             Invoke("DestroyBox", 1f);
