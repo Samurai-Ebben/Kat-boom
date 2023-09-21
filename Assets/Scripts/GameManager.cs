@@ -163,6 +163,14 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
+        title.text = "GameOver";
+        gameOverscrn.SetActive(true);
+        Time.timeScale = 0;
+    }
+
+    public void Victory()
+    {
+        title.text = "Victory";
         gameOverscrn.SetActive(true);
         Time.timeScale = 0;
     }
