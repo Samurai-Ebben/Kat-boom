@@ -54,6 +54,8 @@ public class GameManager : MonoBehaviour
     [Header("--GAMEOVERUI--")]
     public TextMeshProUGUI title;
 
+
+    public bool GMready { get { return ghostMeeterFill.fillAmount >= 1; } }
     private void Awake()
     {
         Instance = this;
@@ -93,6 +95,12 @@ public class GameManager : MonoBehaviour
         {
             StartCoroutine(Death());
             isDead = false;
+        }
+
+        if (!GMready)
+        {
+            ghostMeeterFill.fillAmount = Mathf.MoveTowards(ghostMeeterFill.fillAmount, 1, Time.deltaTime);
+            player.GMamount = Mathf.MoveTowards(player.GMamount, 1, Time.deltaTime * 0.26f);
         }
 
 

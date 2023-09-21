@@ -31,8 +31,10 @@ public class PlayerController : MonoBehaviour
     public float x;
     public float y;
 
+    
     void Start()
     {
+        canUseGM = GameManager.Instance.GMready;
         movePoint.parent = null;
 
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
@@ -118,12 +120,13 @@ public class PlayerController : MonoBehaviour
             whatStops &= LayerMask.GetMask("Walls");
 
             yield return new WaitForSeconds(ghostMeterTimer);
+
             isTransparent = false;
             collider.isTrigger = false;
             spriteRenderer.color = origColor;
             whatStops = tempLayer;
             yield return new WaitForSeconds(ghostMeterTimer * 6);
-            GMamount += 1;
+            //GMamount += 1;
             canUseGM = true;
 
         }
