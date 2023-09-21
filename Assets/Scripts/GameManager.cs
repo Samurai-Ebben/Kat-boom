@@ -51,7 +51,6 @@ public class GameManager : MonoBehaviour
     public Image[] hearts = new Image[5];
     public GameObject gameOverscrn;
 
-    private SpriteRenderer spriteRenderer;
     private void Awake()
     {
         Instance = this;
@@ -62,8 +61,6 @@ public class GameManager : MonoBehaviour
     {
         gameOverscrn.SetActive(false);
         door1.SetActive(false);
-        spriteRenderer = player.GetComponent<SpriteRenderer>();
-
         for (int i = 1; i < levels.Length; i++)
         {
             levels[i].SetActive(false);
@@ -130,9 +127,8 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator Death()
     {
-        spriteRenderer.enabled = false;
-        player.x = 0;
-        player.y = 0;
+        player.spriteRenderer.enabled = false;
+        player.canMove = false;
         var deadCat = Instantiate(DeadCat, player.transform.position, Quaternion.identity);
         Destroy(deadCat, .7f);
 
@@ -145,9 +141,8 @@ public class GameManager : MonoBehaviour
         if (lvl3)
             player.Teleport(startPointlvl3.position);
 
-        spriteRenderer.enabled = true;
-        player.x = Input.GetAxisRaw("Horizontal");
-        player.y = Input.GetAxisRaw("Vertical");
+        player.spriteRenderer.enabled = true;
+        player.canMove = true;
         hearts[player.lives - 1].fillAmount = 0;
         player.lives--;
         score -= 25;
