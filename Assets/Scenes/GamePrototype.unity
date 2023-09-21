@@ -3607,6 +3607,10 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: 0.018844426
       objectReference: {fileID: 0}
+    - target: {fileID: 9005352925575010919, guid: 7379bdc66c899174885fb7e0afdc5d22, type: 3}
+      propertyPath: m_Radius
+      value: 0.65
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4007,7 +4011,7 @@ MonoBehaviour:
   explosion: {fileID: 7710167678694776494, guid: fad65abff8de2744492511c00d3c98f3, type: 3}
   DoorElL1: {fileID: 1990441582}
   DoorElL2: {fileID: 375173501}
-  DoorElL3: {fileID: 0}
+  DoorElL3: {fileID: 3302556864769081244, guid: 5e018f2a6e090dd409412f7abd68e6a4, type: 3}
   DeadCat: {fileID: 7888274223112921740, guid: 8423df70c34f08d46adde5a2281eef30, type: 3}
   leaderboard: {fileID: 54786614}
   victoryScreen: {fileID: 1018659885}
@@ -10445,8 +10449,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.0015500188, y: -0.0009499788, z: 0}
-    m_Extent: {x: 1.00775, y: 1.00735, z: 0}
+    m_Center: {x: 0.00049996376, y: -0.0023499727, z: 0}
+    m_Extent: {x: 1.0093, y: 1.00235, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -19537,11 +19541,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3114991437677990294, guid: 7379bdc66c899174885fb7e0afdc5d22, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.04
+      value: 1.049
       objectReference: {fileID: 0}
     - target: {fileID: 3114991437677990294, guid: 7379bdc66c899174885fb7e0afdc5d22, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.999
+      value: 3.016
       objectReference: {fileID: 0}
     - target: {fileID: 3114991437677990294, guid: 7379bdc66c899174885fb7e0afdc5d22, type: 3}
       propertyPath: m_LocalPosition.z
@@ -30542,11 +30546,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3114991437677990294, guid: 7379bdc66c899174885fb7e0afdc5d22, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.029
+      value: 12.059
       objectReference: {fileID: 0}
     - target: {fileID: 3114991437677990294, guid: 7379bdc66c899174885fb7e0afdc5d22, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.004
+      value: -3.989
       objectReference: {fileID: 0}
     - target: {fileID: 3114991437677990294, guid: 7379bdc66c899174885fb7e0afdc5d22, type: 3}
       propertyPath: m_LocalPosition.z
@@ -30595,6 +30599,10 @@ PrefabInstance:
     - target: {fileID: 7188715800943422881, guid: 7379bdc66c899174885fb7e0afdc5d22, type: 3}
       propertyPath: m_Offset.y
       value: 0.005390495
+      objectReference: {fileID: 0}
+    - target: {fileID: 9005352925575010919, guid: 7379bdc66c899174885fb7e0afdc5d22, type: 3}
+      propertyPath: m_Radius
+      value: 0.68
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -33000,7 +33008,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4894740384330292085, guid: 10500b0a32d56764ea9bef3306537b06, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 7.514496
+      value: 7.51449
       objectReference: {fileID: 0}
     - target: {fileID: 4894740384330292085, guid: 10500b0a32d56764ea9bef3306537b06, type: 3}
       propertyPath: m_AnchoredPosition.y
