@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
     private Color origColor;
     bool isRight = true;
 
-    public int lives = 5;
+    public int lives = 9;
 
     public bool canMove = true;
 

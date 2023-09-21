@@ -43,19 +43,20 @@ public class GameManager : MonoBehaviour
     [Header("--UI MANAGEMENT--")]
     public int score = 0;
 
-
     [Header("--UI--")]
     public TextMeshProUGUI scoreTxt;
     public TextMeshProUGUI livesTxt;
     public Image ghostMeeterFill;
-    public Image[] hearts = new Image[5];
+    public Image[] hearts = new Image[9];
     public GameObject gameOverscrn;
+    public GameObject HUD;
 
     [Header("--GAMEOVERUI--")]
     public TextMeshProUGUI title;
 
 
     public bool GMready { get { return ghostMeeterFill.fillAmount >= 1; } }
+
     private void Awake()
     {
         Instance = this;
@@ -64,6 +65,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        HUD.SetActive(true);
         gameOverscrn.SetActive(false);
         door1.SetActive(false);
         for (int i = 1; i < levels.Length; i++)
@@ -163,25 +165,23 @@ public class GameManager : MonoBehaviour
         {
             player.lives = 0;
             yield return leaderboard.SubmitScoreRoutine(score);
-            GameOver();
+            EndScreen("GameOver");
         }
 
     }
 
 
-    public void GameOver()
+
+    public void EndScreen(string text)
     {
-        title.text = "GameOver";
+        title.text = text;
         gameOverscrn.SetActive(true);
+        HUD.SetActive(false);
         Time.timeScale = 0;
+        //if(text =="GameOver")
+            //Show animation
     }
 
-    public void Victory()
-    {
-        title.text = "Victory";
-        gameOverscrn.SetActive(true);
-        Time.timeScale = 0;
-    }
 
     public void Rstrt()
     {
