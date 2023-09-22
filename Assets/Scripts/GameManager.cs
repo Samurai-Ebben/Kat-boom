@@ -202,7 +202,6 @@ public class GameManager : MonoBehaviour
     }
 
 
-
     public void EndScreen(string text)
     {
         title.text = text;

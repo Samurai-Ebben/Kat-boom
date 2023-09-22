@@ -9,5 +9,7 @@ public class DiaTrigger : MonoBehaviour
     public void TriggerDia()
     {
         DiaManager.Instance.StartDia(dia);
+        Destroy(gameObject.GetComponent<Collider2D>());
+
     }
 }

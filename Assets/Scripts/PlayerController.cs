@@ -84,7 +84,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        movePoint.position = transform.position;
+        //movePoint.position = transform.position;
         if(other.gameObject.layer == neverGoThrough)
         {
             StartCoroutine(GameManager.Instance.Death());
