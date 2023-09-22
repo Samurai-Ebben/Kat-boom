@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
     public int countBoxesLvl1 = 5;
     public int countBoxesLvl2 = 5;
     public int countBoxesLvl3 = 5;
+    public int countBoxesLvl0 = 1;
 
     [Header("--REF Doors--")]
     public GameObject door1;
@@ -40,7 +41,8 @@ public class GameManager : MonoBehaviour
     public Transform startPointlvl3;
 
     [Header("--LEVEL SWITCHS --")]
-    public bool lvl1 = true;
+    public bool tut = true;
+    public bool lvl1 = false;
     public bool lvl2 = false;
     public bool lvl3 = false;
     public bool isDead = false;
@@ -94,7 +96,6 @@ public class GameManager : MonoBehaviour
     void DiaPlay()
     {
         diafst.TriggerDia();
-
     }
     // Update is called once per frame
     void Update()
@@ -103,6 +104,10 @@ public class GameManager : MonoBehaviour
         ghostMeeterFill.fillAmount = player.GMamount;
         scoreTxt.text = "Score: " + score.ToString();
 
+        if(countBoxesLvl0 <= 0 && tut)
+        {
+            player.Teleport(startPointlvl1.position);
+        }
         if (countBoxesLvl1 <= 0 && lvl1)
         {
             door1.SetActive(true);
