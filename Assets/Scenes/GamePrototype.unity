@@ -4049,7 +4049,7 @@ MonoBehaviour:
   victoryScreen: {fileID: 1305530855}
   Gaol: {fileID: 1433853594}
   lastDia: {fileID: 1556337904}
-  countBoxesLvl1: 10
+  countBoxesLvl1: 2
   countBoxesLvl2: 10
   countBoxesLvl3: 10
   door1: {fileID: 1939600307}
@@ -4057,9 +4057,9 @@ MonoBehaviour:
   startPointlvl1: {fileID: 432953935}
   startPointlvl2: {fileID: 1253805239}
   startPointlvl3: {fileID: 160876964}
-  lvl1: 0
+  lvl1: 1
   lvl2: 0
-  lvl3: 1
+  lvl3: 0
   isDead: 0
   score: 0
   scoreTxt: {fileID: 1892421556}
@@ -10682,8 +10682,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.00095003843, y: 0.0041999817, z: 0}
-    m_Extent: {x: 1.0086501, y: 1.0056, z: 0}
+    m_Center: {x: -0.0018000305, y: -0.0034000278, z: 0}
+    m_Extent: {x: 1.0006, y: 1.0051999, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -19305,7 +19305,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7188715800943422881, guid: 7379bdc66c899174885fb7e0afdc5d22, type: 3}
       propertyPath: m_Size.y
-      value: 0.69
+      value: 0.5847527
       objectReference: {fileID: 0}
     - target: {fileID: 7188715800943422881, guid: 7379bdc66c899174885fb7e0afdc5d22, type: 3}
       propertyPath: m_Offset.x
@@ -19313,7 +19313,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7188715800943422881, guid: 7379bdc66c899174885fb7e0afdc5d22, type: 3}
       propertyPath: m_Offset.y
-      value: -0.0076004416
+      value: 0.045023195
       objectReference: {fileID: 0}
     - target: {fileID: 9005352925575010919, guid: 7379bdc66c899174885fb7e0afdc5d22, type: 3}
       propertyPath: m_Offset.x
@@ -33918,11 +33918,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8639857802925269391, guid: 872edc6ecbbd02d48bf7d200c1c579f1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 21.53
+      value: 0.549
       objectReference: {fileID: 0}
     - target: {fileID: 8639857802925269391, guid: 872edc6ecbbd02d48bf7d200c1c579f1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.74
+      value: -1.347
       objectReference: {fileID: 0}
     - target: {fileID: 8639857802925269391, guid: 872edc6ecbbd02d48bf7d200c1c579f1, type: 3}
       propertyPath: m_LocalPosition.z
