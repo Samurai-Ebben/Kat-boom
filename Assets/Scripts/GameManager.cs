@@ -41,8 +41,8 @@ public class GameManager : MonoBehaviour
     public Transform startPointlvl3;
 
     [Header("--LEVEL SWITCHS --")]
-    public bool tut = true;
-    public bool lvl1 = false;
+    public bool tut = false;
+    public bool lvl1 = true;
     public bool lvl2 = false;
     public bool lvl3 = false;
     public bool isDead = false;

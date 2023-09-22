@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3389151755125443253}
   - component: {fileID: -4380277027551753696}
   - component: {fileID: 9005352925575010919}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Barrel1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121,7 +121,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0043200254, y: 0.010543197}
+  m_Offset: {x: 0, y: -0.047347605}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -132,7 +132,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.8703146, y: 0.8972662}
+  m_Size: {x: 0.75, y: 0.7}
   m_EdgeRadius: 0
 --- !u!50 &8871492780877476744
 Rigidbody2D:
@@ -175,7 +175,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 7710167678694776494, guid: fad65abff8de2744492511c00d3c98f3, type: 3}
   tiktikBarrale: {fileID: 1701678770573607419, guid: fa751bbfc1f621e418e25a12e6af525e, type: 3}
-  exhurt: {fileID: -4380277027551753696}
+  lvlNum: 1
 --- !u!82 &-4380277027551753696
 AudioSource:
   m_ObjectHideFlags: 0
