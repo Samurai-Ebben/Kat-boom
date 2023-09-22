@@ -4227,11 +4227,13 @@ MonoBehaviour:
   countBoxesLvl1: 10
   countBoxesLvl2: 10
   countBoxesLvl3: 10
+  countBoxesLvl0: 1
   door1: {fileID: 1939600307}
   door2: {fileID: 667745069}
   startPointlvl1: {fileID: 432953935}
   startPointlvl2: {fileID: 1253805239}
   startPointlvl3: {fileID: 160876964}
+  tut: 1
   lvl1: 1
   lvl2: 0
   lvl3: 0
@@ -10830,11 +10832,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3114991437677990294, guid: 7379bdc66c899174885fb7e0afdc5d22, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.69
+      value: 5.11
       objectReference: {fileID: 0}
     - target: {fileID: 3114991437677990294, guid: 7379bdc66c899174885fb7e0afdc5d22, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.39
+      value: 1.88
       objectReference: {fileID: 0}
     - target: {fileID: 3114991437677990294, guid: 7379bdc66c899174885fb7e0afdc5d22, type: 3}
       propertyPath: m_LocalPosition.z
@@ -15417,8 +15419,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.0029000044, y: 0.0015000105, z: 0}
-    m_Extent: {x: 1.0014, y: 1.0038, z: 0}
+    m_Center: {x: 0.0022500157, y: -0.00024998188, z: 0}
+    m_Extent: {x: 1.00495, y: 1.00825, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -28048,11 +28050,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3114991437677990294, guid: 7379bdc66c899174885fb7e0afdc5d22, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.13
+      value: 2.13
       objectReference: {fileID: 0}
     - target: {fileID: 3114991437677990294, guid: 7379bdc66c899174885fb7e0afdc5d22, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.89
+      value: 3.9
       objectReference: {fileID: 0}
     - target: {fileID: 3114991437677990294, guid: 7379bdc66c899174885fb7e0afdc5d22, type: 3}
       propertyPath: m_LocalPosition.z
