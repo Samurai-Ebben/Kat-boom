@@ -9,6 +9,8 @@ TagManager:
   - tick
   - El
   - Bat
+  - Goal
+  - DiaTrigger
   layers:
   - Default
   - TransparentFX

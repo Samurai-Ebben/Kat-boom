@@ -52,8 +52,9 @@ public class PlayerController : MonoBehaviour
 
         if (!canMove)
             return;
+
         transform.position = Vector3.MoveTowards(transform.position, movePoint.position, speed * Time.deltaTime);
-        if (Vector3.Distance(transform.position, movePoint.position) <= 0.05f)
+        if (Vector3.Distance(transform.position, movePoint.position) == 0)
         {
             if (Mathf.Abs(x) == 1)
             {
@@ -109,7 +110,12 @@ public class PlayerController : MonoBehaviour
         {
             GameManager.Instance.elHurt = other.gameObject.GetComponent<AudioSource>();
             GameManager.Instance.elHurt.Play();
-
+        }
+        if (other.gameObject.tag == "DiaTrigger")
+            GameManager.Instance.lastDia.TriggerDia();
+        if (other.gameObject.tag == "Goal")
+        {
+            GameManager.Instance.EndScreen("Victory");
         }
     }
 

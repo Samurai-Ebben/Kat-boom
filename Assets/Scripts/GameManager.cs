@@ -20,7 +20,10 @@ public class GameManager : MonoBehaviour
     public GameObject DeadCat;
     public Leaderboard leaderboard;
     public GameObject victoryScreen;
+    public GameObject Gaol;
+    public DiaTrigger lastDia;
     private DiaTrigger diafst;
+
 
     [Header("--Boxes Count--")]
     public int countBoxesLvl1 = 5;
@@ -77,9 +80,11 @@ public class GameManager : MonoBehaviour
         Invoke("DiaPlay", 0.01f);
         HUD.SetActive(true);
         gameOverscrn.SetActive(false);
+        victoryScreen.SetActive(false);
+
         door1.SetActive(false);
         door2.SetActive(false);
-
+        Gaol.SetActive(false);
         for (int i = 1; i < levels.Length; i++)
         {
             levels[i].SetActive(false);
@@ -114,6 +119,11 @@ public class GameManager : MonoBehaviour
             DoorElL2.SetActive(false);
 
         }
+        if(countBoxesLvl3 <= 0 && lvl3)
+        {
+            Gaol.SetActive(true);
+
+        }
 
         if (player.lives > 0 && isDead)
         {
@@ -131,7 +141,7 @@ public class GameManager : MonoBehaviour
 
     public void NextLvl()
     {
-        levels[1].SetActive(true);
+        levels[1].SetActive(true); //lvl2 active
         player.transform.position = startPointlvl2.position;
         player.movePoint.position = player.transform.position;
         Camera.main.transform.position = new Vector3(21.9699993f, 0, -10);
@@ -142,13 +152,13 @@ public class GameManager : MonoBehaviour
 
     public void NextLvl2()
     {
-        lvl3 = true;
         levels[2].SetActive(true);
         player.transform.position = startPointlvl3.position;
         player.movePoint.position = player.transform.position;
         Camera.main.transform.position = new Vector3(22f, 13.2f, -10);
         levels[1].SetActive(false);
         lvl2 = false;
+        lvl3 = true;
     }
 
     public IEnumerator Explode(Transform box)
@@ -176,11 +186,11 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(.8f);
 
         player.spriteRenderer.enabled = true;
-        player.canMove = true;
         hearts[player.lives - 1].fillAmount = 0;
         player.lives--;
         score -= 25;
-
+        yield return new WaitForSeconds(1f);
+        player.canMove = true;
 
         if (player.lives <= 0)
         {
@@ -198,11 +208,12 @@ public class GameManager : MonoBehaviour
         title.text = text;
         gameOverscrn.SetActive(true);
         HUD.SetActive(false);
-        //Time.timeScale = 0;
         player.canMove = false;
-        if (text == "GameOver")
+        if (text == "Victory")
             victoryScreen.SetActive(true);
-            //Show animation
+        else
+            victoryScreen.SetActive(false);
+
     }
 
 

@@ -8,6 +8,7 @@ public class Collision : MonoBehaviour
     public GameObject explosion;
     public GameObject tiktikBarrale;
 
+    public int lvlNum;
     SpriteRenderer spriteRenderer;
 
     private void Start()
@@ -36,7 +37,13 @@ public class Collision : MonoBehaviour
 
     private void OnDestroy()
     {
-        GameManager.Instance.countBoxesLvl1--;
+        if(lvlNum == 1)
+            GameManager.Instance.countBoxesLvl1--;
+        if(lvlNum == 2)
+            GameManager.Instance.countBoxesLvl2--;
+        if(lvlNum == 3)
+            GameManager.Instance.countBoxesLvl3--;
+
         GameManager.Instance.score += 100;
     }
 

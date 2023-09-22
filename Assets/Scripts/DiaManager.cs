@@ -71,6 +71,7 @@ public class DiaManager : MonoBehaviour
     public void EndDia()
     {
         animator.SetBool("IsOpen", false);
+
         GameManager.Instance.player.canMove = true;
 
     }
