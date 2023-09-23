@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+
+    public GameObject ghostEffect;
     public float speed = 25f;
     public Transform movePoint;
 
@@ -143,6 +145,8 @@ public class PlayerController : MonoBehaviour
             spriteRenderer.color = origColor;
             whatStops = tempLayer;
             yield return new WaitForSeconds(ghostMeterTimer * 6);
+            var gE = Instantiate(ghostEffect, transform.position, Quaternion.identity);
+            Destroy(gE, .6f);
             //GMamount += 1;
             canUseGM = true;
 

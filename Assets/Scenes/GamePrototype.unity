@@ -2517,7 +2517,7 @@ Animator:
   m_GameObject: {fileID: 66290794}
   m_Enabled: 0
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: fe5265e03e6971344a00dcc06a64cdc0, type: 2}
+  m_Controller: {fileID: 9100000, guid: c14967a21417fc942a674c7dedfa6854, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -47544,6 +47544,10 @@ PrefabInstance:
       propertyPath: ghostMeter
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 4298701660898009985, guid: 872edc6ecbbd02d48bf7d200c1c579f1, type: 3}
+      propertyPath: ghostEffect
+      value: 
+      objectReference: {fileID: 2850606230707223319, guid: 1988e73843fac7048a7f32cf14264fb8, type: 3}
     - target: {fileID: 4298701660898009985, guid: 872edc6ecbbd02d48bf7d200c1c579f1, type: 3}
       propertyPath: isTransparent
       value: 0
