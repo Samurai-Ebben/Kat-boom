@@ -33,7 +33,7 @@ public class PlayerManager : MonoBehaviour
     IEnumerator SetRoutine()
     {
         yield return loginRoutine();
-        yield return leaderBoard.FetchTopThree();
+        yield return leaderBoard.FetchTopScores();
     }
 
     IEnumerator loginRoutine()
