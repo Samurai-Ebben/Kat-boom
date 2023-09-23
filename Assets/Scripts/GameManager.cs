@@ -64,7 +64,9 @@ public class GameManager : MonoBehaviour
     [Header("--AUDIO--")]
     public AudioSource doorSfx;
     public AudioSource doorSfx2;
-    public AudioSource elHurt;
+    public AudioSource elHurt; 
+    public AudioSource batHurt;
+
 
 
     public bool GMready { get { return ghostMeeterFill.fillAmount >= 1; } }
@@ -148,21 +150,32 @@ public class GameManager : MonoBehaviour
         levels[1].SetActive(true); //lvl2 active
         player.transform.position = startPointlvl2.position;
         player.movePoint.position = player.transform.position;
-        Camera.main.transform.position = new Vector3(21.9699993f, 0, -10);
+        Camera.main.transform.position = new Vector3(-0.219999999f, 0, -10);
         levels[0].SetActive(false);
         lvl1 = false;
         lvl2 = true;
     }
+
 
     public void NextLvl2()
     {
         levels[2].SetActive(true);
         player.transform.position = startPointlvl3.position;
         player.movePoint.position = player.transform.position;
-        Camera.main.transform.position = new Vector3(22f, 13.2f, -10);
+        Camera.main.transform.position = new Vector3(21.9699993f, 0, -10);
         levels[1].SetActive(false);
         lvl2 = false;
         lvl3 = true;
+    }
+    public void NextLvl3()
+    {
+        levels[3].SetActive(true); //lvl2 active
+        player.transform.position = startPointlvl2.position;
+        player.movePoint.position = player.transform.position;
+        Camera.main.transform.position = new Vector3(22f, 13.2f, -10);
+        levels[2].SetActive(false);
+        lvl1 = false;
+        lvl2 = true;
     }
 
     public IEnumerator Explode(Transform box)
