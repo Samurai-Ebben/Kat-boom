@@ -37,7 +37,9 @@ public class Collision : MonoBehaviour
 
     private void OnDestroy()
     {
-        if(lvlNum == 1)
+        if(lvlNum == 0)
+            GameManager.Instance.countBoxesLvl0--;
+        if (lvlNum == 1)
             GameManager.Instance.countBoxesLvl1--;
         if(lvlNum == 2)
             GameManager.Instance.countBoxesLvl2--;

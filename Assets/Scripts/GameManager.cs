@@ -149,8 +149,9 @@ public class GameManager : MonoBehaviour
     {
         levels[1].SetActive(true); //lvl2 active
         player.Teleport(startPointlvl1.position);
-        Camera.main.transform.position = new Vector3(-0.219999999f, 0, -10);
-        levels[0].SetActive(false);
+        var newCamPos = new Vector3(-0.219999999f, 0, -10) - Camera.main.transform.position;
+        Camera.main.transform.Translate(newCamPos);
+        //levels[0].SetActive(false);
         tut = false;
         lvl1 = true;
     }
