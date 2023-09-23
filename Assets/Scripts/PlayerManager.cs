@@ -23,6 +23,9 @@ public class PlayerManager : MonoBehaviour
             if (respons.success)
             {
                 Debug.Log("Seccessfully set player name");
+                StartCoroutine(leaderBoard.SubmitScoreRoutine(GameManager.Instance.score));
+                StartCoroutine(leaderBoard.FetchTopScores());
+
             }
             else
             {

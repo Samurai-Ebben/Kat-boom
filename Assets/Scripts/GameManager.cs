@@ -227,7 +227,10 @@ public class GameManager : MonoBehaviour
         HUD.SetActive(false);
         player.canMove = false;
         if (text == "Victory")
+        {
             victoryScreen.SetActive(true);
+            score += 100;
+        }
         else
             victoryScreen.SetActive(false);
 
