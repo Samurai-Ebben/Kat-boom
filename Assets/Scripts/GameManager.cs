@@ -207,25 +207,28 @@ public class GameManager : MonoBehaviour
         hearts[player.lives - 1].fillAmount = 0;
         player.lives--;
         score -= 25;
+
         yield return new WaitForSeconds(1f);
-        player.canMove = true;
 
         if (player.lives <= 0)
         {
+            player.canMove = false;
+
             player.lives = 0;
-            yield return leaderboard.SubmitScoreRoutine(score);
             EndScreen("GameOver");
-        }
+        }else
+            player.canMove = true;
 
     }
 
 
     public void EndScreen(string text)
     {
+        StartCoroutine(leaderboard.SubmitScoreRoutine(score));
+        player.canMove = false;
         title.text = text;
         gameOverscrn.SetActive(true);
         HUD.SetActive(false);
-        player.canMove = false;
         if (text == "Victory")
         {
             victoryScreen.SetActive(true);

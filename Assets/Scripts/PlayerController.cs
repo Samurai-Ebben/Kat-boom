@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
 
     public int lives = 9;
 
-    public bool canMove = true;
+    public bool canMove = false;
 
     public SpriteRenderer spriteRenderer;
     new Collider2D collider;
@@ -49,11 +49,12 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        if (!canMove)
+            return;
+
         x = Input.GetAxisRaw("Horizontal");
         y = Input.GetAxisRaw("Vertical");
 
-        if (!canMove)
-            return;
 
         transform.position = Vector3.MoveTowards(transform.position, movePoint.position, speed * Time.deltaTime);
         if (Vector3.Distance(transform.position, movePoint.position) == 0)
@@ -145,6 +146,7 @@ public class PlayerController : MonoBehaviour
             spriteRenderer.color = origColor;
             whatStops = tempLayer;
             yield return new WaitForSeconds(ghostMeterTimer * 6);
+
             var gE = Instantiate(ghostEffect, transform.position, Quaternion.identity);
             Destroy(gE, .6f);
             //GMamount += 1;
