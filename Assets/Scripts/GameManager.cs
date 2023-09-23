@@ -107,7 +107,7 @@ public class GameManager : MonoBehaviour
 
         if(countBoxesLvl0 <= 0 && tut)
         {
-            player.Teleport(startPointlvl1.position);
+            NextLvl();
         }
         if (countBoxesLvl1 <= 0 && lvl1)
         {
@@ -148,34 +148,32 @@ public class GameManager : MonoBehaviour
     public void NextLvl()
     {
         levels[1].SetActive(true); //lvl2 active
-        player.transform.position = startPointlvl2.position;
-        player.movePoint.position = player.transform.position;
+        player.Teleport(startPointlvl1.position);
         Camera.main.transform.position = new Vector3(-0.219999999f, 0, -10);
         levels[0].SetActive(false);
-        lvl1 = false;
-        lvl2 = true;
+        tut = false;
+        lvl1 = true;
     }
 
 
     public void NextLvl2()
     {
         levels[2].SetActive(true);
-        player.transform.position = startPointlvl3.position;
-        player.movePoint.position = player.transform.position;
+        player.Teleport(startPointlvl2.position);
+
         Camera.main.transform.position = new Vector3(21.9699993f, 0, -10);
         levels[1].SetActive(false);
-        lvl2 = false;
-        lvl3 = true;
+        lvl1 = false;
+        lvl2 = true;
     }
     public void NextLvl3()
     {
         levels[3].SetActive(true); //lvl2 active
-        player.transform.position = startPointlvl2.position;
-        player.movePoint.position = player.transform.position;
+        player.Teleport(startPointlvl3.position);
         Camera.main.transform.position = new Vector3(22f, 13.2f, -10);
         levels[2].SetActive(false);
-        lvl1 = false;
-        lvl2 = true;
+        lvl2 = false;
+        lvl3 = true;
     }
 
     public IEnumerator Explode(Transform box)
@@ -191,6 +189,8 @@ public class GameManager : MonoBehaviour
         player.spriteRenderer.enabled = false;
         player.canMove = false;
         var deadCat = Instantiate(DeadCat, player.transform.position, Quaternion.identity);
+        if (tut)
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         if (lvl1)
             player.Teleport(startPointlvl1.position);
         if (lvl2)
