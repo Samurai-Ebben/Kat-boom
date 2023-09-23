@@ -65,7 +65,6 @@ public class GameManager : MonoBehaviour
     public AudioSource doorSfx;
     public AudioSource doorSfx2;
     public AudioSource elHurt;
-    public AudioSource batHurt;
 
 
     public bool GMready { get { return ghostMeeterFill.fillAmount >= 1; } }
