@@ -149,7 +149,7 @@ public class GameManager : MonoBehaviour
     {
         levels[1].SetActive(true); //lvl2 active
         player.Teleport(startPointlvl1.position);
-        var newCamPos = new Vector3(-0.219999999f, 0, -10) - Camera.main.transform.position;
+        var newCamPos = new Vector3(-0.08f, 0, -10) - Camera.main.transform.position;
         Camera.main.transform.Translate(newCamPos);
         //levels[0].SetActive(false);
         tut = false;
@@ -162,7 +162,7 @@ public class GameManager : MonoBehaviour
         levels[2].SetActive(true);
         player.Teleport(startPointlvl2.position);
 
-        Camera.main.transform.position = new Vector3(21.9699993f, 0, -10);
+        Camera.main.transform.position = new Vector3(22.1f, 0, -10);
         levels[1].SetActive(false);
         lvl1 = false;
         lvl2 = true;
@@ -171,7 +171,7 @@ public class GameManager : MonoBehaviour
     {
         levels[3].SetActive(true); //lvl2 active
         player.Teleport(startPointlvl3.position);
-        Camera.main.transform.position = new Vector3(22f, 13.2f, -10);
+        Camera.main.transform.position = new Vector3(22.1f, 13.2f, -10);
         levels[2].SetActive(false);
         lvl2 = false;
         lvl3 = true;
