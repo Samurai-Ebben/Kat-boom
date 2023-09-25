@@ -40,6 +40,8 @@ public class GameManager : MonoBehaviour
     public Transform startPointlvl2;
     public Transform startPointlvl3;
 
+    private List<Transform> allStartingpoints;
+
     [Header("--LEVEL SWITCHS --")]
     public bool tut = false;
     public bool lvl1 = true;
@@ -79,6 +81,10 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        allStartingpoints.Add(startPointlvl1);
+        allStartingpoints.Add(startPointlvl2);
+        allStartingpoints.Add( startPointlvl3);
+
         diafst = GetComponent<DiaTrigger>();
         Invoke("DiaPlay", 0.01f);
         HUD.SetActive(true);
@@ -102,12 +108,11 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         //UI
-        ghostMeeterFill.fillAmount = player.GMamount;
-        scoreTxt.text = "Score: " + score.ToString();
+        UIUpdate();
 
-        if(countBoxesLvl0 <= 0 && tut)
+        if (countBoxesLvl0 <= 0 && tut)
         {
-            NextLvl();
+            NxtLvl(0,1);
         }
         if (countBoxesLvl1 <= 0 && lvl1)
         {
@@ -125,7 +130,7 @@ public class GameManager : MonoBehaviour
             DoorElL2.SetActive(false);
 
         }
-        if(countBoxesLvl3 <= 0 && lvl3)
+        if (countBoxesLvl3 <= 0 && lvl3)
         {
             Gaol.SetActive(true);
 
@@ -145,45 +150,74 @@ public class GameManager : MonoBehaviour
 
     }
 
-    public void NextLvl()
+    void ChangeValidtyLvl(int lvlNum)
     {
-        levels[1].SetActive(true); //lvl2 active
-        player.Teleport(startPointlvl1.position);
-        var newCamPos = new Vector3(-0.08f, 0.3f, -10) - Camera.main.transform.position;
-        Camera.main.transform.Translate(newCamPos);
-        //levels[0].SetActive(false);
-        tut = false;
-        lvl1 = true;
+        if(lvlNum == 1)
+        {
+            tut = false;
+            lvl1 = true;
+        }
+        else if(lvlNum == 2)
+        {
+            lvl1 = false;
+            lvl2 = true;
+        }
+        else if(lvlNum == 3)
+        {
+            lvl2 = false;
+            lvl3 = true;
+        }
+    }
+    private void UIUpdate()
+    {
+        ghostMeeterFill.fillAmount = player.GMamount;
+        scoreTxt.text = "Score: " + score.ToString();
     }
 
+    //public void NextLvl()
+    //{
+    //    levels[1].SetActive(true); //lvl2 active
+    //    player.Teleport(startPointlvl1.position);
+    //    var newCamPos = new Vector3(-0.08f, 0.3f, -10) - Camera.main.transform.position;
+    //    Camera.main.transform.Translate(newCamPos);
+    //    ChangeValidtyLvl(1);
+    //}
 
-    public void NextLvl2()
+    public void NxtLvl(int currLvl, int nxtLvl)
     {
-        levels[2].SetActive(true);
-        player.Teleport(startPointlvl2.position);
 
-        Camera.main.transform.position = new Vector3(22.1f, 0.3f, -10);
-        levels[1].SetActive(false);
-        lvl1 = false;
-        lvl2 = true;
-    }
-    public void NextLvl3()
-    {
-        levels[3].SetActive(true); //lvl2 active
-        player.Teleport(startPointlvl3.position);
-        Camera.main.transform.position = new Vector3(22.1f, 13.5f, -10);
-        levels[2].SetActive(false);
-        lvl2 = false;
-        lvl3 = true;
+        //lvl1 = new Vector3(-0.08f, 0.3f, -10)
+        //Vector3(22.1f, 0.3f, -10)
+        //Vector3(22.1f, 13.5f, -10)
+        List<Vector3> camPositions = new List<Vector3> { new Vector3(-0.08f, 0.3f, -10), new Vector3(22.1f, 0.3f, -10), new Vector3(22.1f, 13.5f, -10) };
+        levels[nxtLvl].SetActive(true);
+        player.Teleport(allStartingpoints[nxtLvl-1].position);
+
+        Camera.main.transform.position = camPositions[nxtLvl-1];
+        if(currLvl != 0)
+            levels[currLvl].SetActive(false);
+        ChangeValidtyLvl(nxtLvl);
     }
 
-    public IEnumerator Explode(Transform box)
-    {
-        yield return new WaitForSeconds(1);
-        var explosionPly = Instantiate(explosion, box.position, Quaternion.identity);
-        Destroy(explosionPly, 0.2f);
-        Debug.Log("kaboom");
-    }
+    //public void NextLvl2()
+    //{
+    //    levels[2].SetActive(true);
+    //    player.Teleport(startPointlvl2.position);
+
+    //    Camera.main.transform.position = new Vector3(22.1f, 0.3f, -10);
+    //    levels[1].SetActive(false);
+    //    ChangeValidtyLvl(3);
+    //}
+    //public void NextLvl3()
+    //{
+    //    levels[3].SetActive(true); //lvl2 active
+    //    player.Teleport(startPointlvl3.position);
+    //    Camera.main.transform.position = new Vector3(22.1f, 13.5f, -10);
+    //    levels[2].SetActive(false);
+    //    lvl2 = false;
+    //    lvl3 = true;
+    //}
+
 
     public IEnumerator Death()
     {
@@ -243,9 +277,7 @@ public class GameManager : MonoBehaviour
     public void Rstrt()
     {
         SceneManager.LoadScene(1);
-        //Time.timeScale = Time.timescale = 0 ? 1:1;
-        if(Time.timeScale == 0)
-            Time.timeScale = 1;
+        Time.timeScale = Time.timeScale == 1 ? 0 : 1;
     }
 
     public void menu()

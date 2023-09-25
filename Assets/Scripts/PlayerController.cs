@@ -92,11 +92,11 @@ public class PlayerController : MonoBehaviour
         }
         if (other.gameObject == GameManager.Instance.door1)
         {
-            GameManager.Instance.NextLvl2();
+            GameManager.Instance.NxtLvl(1,2);
         }
         if (other.gameObject == GameManager.Instance.door2)
         {
-            GameManager.Instance.NextLvl3();
+            GameManager.Instance.NxtLvl(2,3);
         }
         if(other.gameObject.tag == "explosion")
         {
