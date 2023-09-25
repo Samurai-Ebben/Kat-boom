@@ -97,21 +97,17 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void DiaPlay()
-    {
-        diafst.TriggerDia();
-    }
-    // Update is called once per frame
+
     void Update()
     {
         //UI
         UIUpdate();
 
-        if (countBoxesLvl0 <= 0 && tut)
+        if (countBoxesLvl0 < 1 && tut)
         {
             NxtLvl(0,1);
         }
-        if (countBoxesLvl1 <= 0 && lvl1)
+        if (countBoxesLvl1 < 1 && lvl1)
         {
             door1.SetActive(true);
             doorSfx.Play();
@@ -119,7 +115,7 @@ public class GameManager : MonoBehaviour
             DoorElL1.SetActive(false);
         }
 
-        if (countBoxesLvl2 <= 0 && lvl2)
+        if (countBoxesLvl2 < 1 && lvl2)
         {
             door2.SetActive(true);
             doorSfx.Play();
@@ -127,7 +123,7 @@ public class GameManager : MonoBehaviour
             DoorElL2.SetActive(false);
 
         }
-        if (countBoxesLvl3 <= 0 && lvl3)
+        if (countBoxesLvl3 < 1 && lvl3)
         {
             Gaol.SetActive(true);
 
@@ -234,14 +230,18 @@ public class GameManager : MonoBehaviour
         HUD.SetActive(false);
         if (text == "Victory")
         {
-            victoryScreen.SetActive(true);
             score += 100;
+            victoryScreen.SetActive(true);
         }
         else
             victoryScreen.SetActive(false);
 
     }
 
+    void DiaPlay()
+    {
+        diafst.TriggerDia();
+    }
 
     public void Rstrt()
     {
@@ -249,7 +249,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = Time.timeScale == 1 ? 0 : 1;
     }
 
-    public void menu()
+    public void Menu()
     {
         SceneManager.LoadScene(0);
 
