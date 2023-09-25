@@ -12,7 +12,6 @@ public class GameManager : MonoBehaviour
 
     [Header("--REFS--")]
     public PlayerController player;
-    public GameObject[] levels;
     public GameObject explosion;
     public GameObject DoorElL1;
     public GameObject DoorElL2;
@@ -23,7 +22,10 @@ public class GameManager : MonoBehaviour
     public GameObject Gaol;
     public DiaTrigger lastDia;
     private DiaTrigger diafst;
+    public LevelSystem levelSystem;
 
+
+    public bool isDead = false;
 
     [Header("--Boxes Count--")]
     public int countBoxesLvl1 = 5;
@@ -35,19 +37,6 @@ public class GameManager : MonoBehaviour
     public GameObject door1;
     public GameObject door2;
 
-    [Header("--STARTING POINTS--")]
-    public Transform startPointlvl1;
-    public Transform startPointlvl2;
-    public Transform startPointlvl3;
-
-    private List<Transform> allStartingpoints;
-
-    [Header("--LEVEL SWITCHS --")]
-    public bool tut = false;
-    public bool lvl1 = true;
-    public bool lvl2 = false;
-    public bool lvl3 = false;
-    public bool isDead = false;
 
     [Header("--UI MANAGEMENT--")]
     public int score = 0;
@@ -81,7 +70,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        allStartingpoints = new List<Transform> { startPointlvl1, startPointlvl2,startPointlvl3 };
+        levelSystem = GetComponent<LevelSystem>();
         diafst = GetComponent<DiaTrigger>();
         Invoke("DiaPlay", 0.01f);
         HUD.SetActive(true);
@@ -91,10 +80,7 @@ public class GameManager : MonoBehaviour
         door1.SetActive(false);
         door2.SetActive(false);
         Gaol.SetActive(false);
-        for (int i = 1; i < levels.Length; i++)
-        {
-            levels[i].SetActive(false);
-        }
+        
     }
 
 
@@ -103,31 +89,7 @@ public class GameManager : MonoBehaviour
         //UI
         UIUpdate();
 
-        if (countBoxesLvl0 < 1 && tut)
-        {
-            NxtLvl(0,1);
-        }
-        if (countBoxesLvl1 < 1 && lvl1)
-        {
-            door1.SetActive(true);
-            doorSfx.Play();
-
-            DoorElL1.SetActive(false);
-        }
-
-        if (countBoxesLvl2 < 1 && lvl2)
-        {
-            door2.SetActive(true);
-            doorSfx.Play();
-
-            DoorElL2.SetActive(false);
-
-        }
-        if (countBoxesLvl3 < 1 && lvl3)
-        {
-            Gaol.SetActive(true);
-
-        }
+        CheckingForLeveling();
 
         if (player.lives > 0 && isDead)
         {
@@ -143,43 +105,39 @@ public class GameManager : MonoBehaviour
 
     }
 
+    public void CheckingForLeveling()
+    {
+        if (countBoxesLvl0 < 1 && levelSystem.tut)
+        {
+            levelSystem.NxtLvl(0, 1);
+        }
+        if (countBoxesLvl1 < 1 && levelSystem.lvl1)
+        {
+            door1.SetActive(true);
+            doorSfx.Play();
+
+            DoorElL1.SetActive(false);
+        }
+
+        if (countBoxesLvl2 < 1 && levelSystem.lvl2)
+        {
+            door2.SetActive(true);
+            doorSfx.Play();
+
+            DoorElL2.SetActive(false);
+
+        }
+        if (countBoxesLvl3 < 1 && levelSystem.lvl3)
+        {
+            Gaol.SetActive(true);
+
+        }
+    }
+
     private void UIUpdate()
     {
         ghostMeeterFill.fillAmount = player.GMamount;
         scoreTxt.text = "Score: " + score.ToString();
-    }
-
-    void ChangeValidtyLvl(int lvlNum)
-    {
-        if(lvlNum == 1)
-        {
-            tut = false;
-            lvl1 = true;
-        }
-        if(lvlNum == 2)
-        {
-            lvl1 = false;
-            lvl2 = true;
-        }
-        if(lvlNum == 3)
-        {
-            lvl2 = false;
-            lvl3 = true;
-        }
-    }
-
-
-    public void NxtLvl(int currLvl, int nxtLvl)
-    {
-
-        List<Vector3> camPositions = new List<Vector3> { new Vector3(-0.08f, 0.3f, -10),
-            new Vector3(22.1f, 0.3f, -10), new Vector3(22.1f, 13.5f, -10) };
-        levels[nxtLvl].SetActive(true);
-        player.Teleport(allStartingpoints[nxtLvl-1].position);
-        Camera.main.transform.position = camPositions[nxtLvl-1];
-        if(currLvl != 0)
-            levels[currLvl].SetActive(false);
-        ChangeValidtyLvl(nxtLvl);
     }
 
 
@@ -189,14 +147,8 @@ public class GameManager : MonoBehaviour
         player.spriteRenderer.enabled = false;
         player.canMove = false;
         var deadCat = Instantiate(DeadCat, player.transform.position, Quaternion.identity);
-        if (tut)
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        if (lvl1)
-            player.Teleport(startPointlvl1.position);
-        if (lvl2)
-            player.Teleport(startPointlvl2.position);
-        if (lvl3)
-            player.Teleport(startPointlvl3.position);
+        levelSystem.SwitchingLevels();
+
 
         Destroy(deadCat, .7f);
 
@@ -246,7 +198,7 @@ public class GameManager : MonoBehaviour
     public void Rstrt()
     {
         SceneManager.LoadScene(1);
-        Time.timeScale = Time.timeScale == 1 ? 0 : 1;
+        Time.timeScale = Time.timeScale == 0 ? 1 : 1;
     }
 
     public void Menu()

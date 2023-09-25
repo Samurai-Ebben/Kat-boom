@@ -4122,6 +4122,7 @@ GameObject:
   - component: {fileID: 372880490}
   - component: {fileID: 372880492}
   - component: {fileID: 372880493}
+  - component: {fileID: 372880494}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -4230,11 +4231,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 200632654}
-  levels:
-  - {fileID: 1147129270}
-  - {fileID: 640174060}
-  - {fileID: 1129314554}
-  - {fileID: 1785883205}
   explosion: {fileID: 7710167678694776494, guid: fad65abff8de2744492511c00d3c98f3, type: 3}
   DoorElL1: {fileID: 1990441582}
   DoorElL2: {fileID: 375173501}
@@ -4244,20 +4240,14 @@ MonoBehaviour:
   victoryScreen: {fileID: 1305530855}
   Gaol: {fileID: 1433853594}
   lastDia: {fileID: 1556337904}
+  levelSystem: {fileID: 0}
+  isDead: 0
   countBoxesLvl1: 10
   countBoxesLvl2: 10
   countBoxesLvl3: 10
   countBoxesLvl0: 2
   door1: {fileID: 1939600307}
   door2: {fileID: 667745069}
-  startPointlvl1: {fileID: 432953935}
-  startPointlvl2: {fileID: 1253805239}
-  startPointlvl3: {fileID: 160876964}
-  tut: 1
-  lvl1: 0
-  lvl2: 0
-  lvl3: 0
-  isDead: 0
   score: 0
   scoreTxt: {fileID: 1892421556}
   livesTxt: {fileID: 1091702069}
@@ -4304,6 +4294,30 @@ MonoBehaviour:
     - Mew Meww! Moww
     - '"Oh right I''m a ghost!"'
     - '"but i don''t think i can go through bats, because they sense me"'
+--- !u!114 &372880494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 372880487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9346366d16c9aec4d91a58bc3595bc06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levels:
+  - {fileID: 1147129270}
+  - {fileID: 640174060}
+  - {fileID: 1129314554}
+  - {fileID: 1785883205}
+  startPointlvl1: {fileID: 432953935}
+  startPointlvl2: {fileID: 1253805239}
+  startPointlvl3: {fileID: 160876964}
+  tut: 1
+  lvl1: 0
+  lvl2: 0
+  lvl3: 0
 --- !u!1001 &375173499
 PrefabInstance:
   m_ObjectHideFlags: 0
