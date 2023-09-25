@@ -2,14 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BatPatrolUD : MonoBehaviour
+public class BatPatrol : MonoBehaviour
 {
     public GameObject pointA;
     public GameObject pointB;
     private Rigidbody2D rb;
     private Animator anim;
     private Transform currentPoint;
-    public float speed;
+    public float speedUD;
+    public float speedRL;
 
     void Start()
     {
@@ -24,11 +25,11 @@ public class BatPatrolUD : MonoBehaviour
         Vector2 point = currentPoint.position - transform.position;
         if (currentPoint == pointB.transform)
         {
-            rb.velocity = new Vector2(0, speed);
+            rb.velocity = new Vector2(speedRL, speedUD);
         }
         else
         {
-            rb.velocity = new Vector2(0, -speed);
+            rb.velocity = new Vector2(-speedRL, -speedUD);
         }
 
         if (Vector2.Distance(transform.position, currentPoint.position) < 0.5f && currentPoint == pointB.transform)

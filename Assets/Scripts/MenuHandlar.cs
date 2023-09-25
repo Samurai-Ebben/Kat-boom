@@ -27,7 +27,6 @@ public class MenuHandlar : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
-
     public void QuitGame()
     {
 //#if UNITY_EDITOR
@@ -35,6 +34,5 @@ public class MenuHandlar : MonoBehaviour
 //#endif
         Application.Quit();
     }
-
 
 }

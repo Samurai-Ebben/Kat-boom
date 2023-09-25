@@ -1992,12 +1992,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 127528433}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6afd742c263f6114dbb3775e2a80fdb3, type: 3}
+  m_Script: {fileID: 11500000, guid: 9ab0e28e744f04f43bf8a4cf8f21ca52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pointA: {fileID: 399628518}
   pointB: {fileID: 1011046145}
-  speed: 2
+  speedUD: 0
+  speedRL: 2
 --- !u!50 &127528438
 Rigidbody2D:
   serializedVersion: 4
@@ -2823,7 +2824,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pointA: {fileID: 829822845}
   pointB: {fileID: 1808000491}
-  speed: 2
+  speedUD: 2
+  speedRL: 0
 --- !u!82 &202666737
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4784,7 +4786,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pointA: {fileID: 504730811}
   pointB: {fileID: 998112871}
-  speed: 2
+  speedUD: 2
+  speedRL: 0
 --- !u!50 &398377173
 Rigidbody2D:
   serializedVersion: 4
@@ -19630,7 +19633,7 @@ GameObject:
   - component: {fileID: 821409393}
   - component: {fileID: 821409396}
   - component: {fileID: 821409395}
-  - component: {fileID: 821409398}
+  - component: {fileID: 821409401}
   - component: {fileID: 821409399}
   - component: {fileID: 821409397}
   - component: {fileID: 821409400}
@@ -19702,7 +19705,7 @@ Transform:
   m_GameObject: {fileID: 821409392}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.0637574, y: 3.7, z: 0.045701295}
+  m_LocalPosition: {x: -1.11, y: 3.7, z: 0.045701295}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -19801,21 +19804,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &821409398
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 821409392}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6afd742c263f6114dbb3775e2a80fdb3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pointA: {fileID: 1871011978}
-  pointB: {fileID: 107763093}
-  speed: 2
 --- !u!114 &821409399
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19924,6 +19912,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &821409401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 821409392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ab0e28e744f04f43bf8a4cf8f21ca52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pointA: {fileID: 1871011978}
+  pointB: {fileID: 107763093}
+  speedUD: 0
+  speedRL: 2
 --- !u!1 &829822845
 GameObject:
   m_ObjectHideFlags: 0
@@ -29819,7 +29823,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pointA: {fileID: 1481421211}
   pointB: {fileID: 1452655133}
-  speed: 2
+  speedUD: 2
+  speedRL: 0
 --- !u!50 &1224386648
 Rigidbody2D:
   serializedVersion: 4
@@ -31391,12 +31396,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1384354974}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6afd742c263f6114dbb3775e2a80fdb3, type: 3}
+  m_Script: {fileID: 11500000, guid: 9ab0e28e744f04f43bf8a4cf8f21ca52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pointA: {fileID: 656082174}
   pointB: {fileID: 774680462}
-  speed: 2
+  speedUD: 0
+  speedRL: 2
 --- !u!50 &1384354979
 Rigidbody2D:
   serializedVersion: 4
@@ -32600,12 +32606,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1442406684}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6afd742c263f6114dbb3775e2a80fdb3, type: 3}
+  m_Script: {fileID: 11500000, guid: 9ab0e28e744f04f43bf8a4cf8f21ca52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pointA: {fileID: 1596600224}
   pointB: {fileID: 1076352554}
-  speed: 2
+  speedUD: 2
+  speedRL: 0
 --- !u!50 &1442406690
 Rigidbody2D:
   serializedVersion: 4
@@ -37286,7 +37293,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pointA: {fileID: 1980949122}
   pointB: {fileID: 325105834}
-  speed: 2
+  speedUD: 2
+  speedRL: 0
 --- !u!50 &1687516796
 Rigidbody2D:
   serializedVersion: 4
@@ -37862,12 +37870,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1773337291}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6afd742c263f6114dbb3775e2a80fdb3, type: 3}
+  m_Script: {fileID: 11500000, guid: 9ab0e28e744f04f43bf8a4cf8f21ca52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pointA: {fileID: 743746508}
   pointB: {fileID: 1211113442}
-  speed: 2
+  speedUD: 0
+  speedRL: 2
 --- !u!50 &1773337296
 Rigidbody2D:
   serializedVersion: 4
@@ -42579,7 +42588,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pointA: {fileID: 1907193389}
   pointB: {fileID: 2064524919}
-  speed: 2
+  speedUD: 2
+  speedRL: 0
 --- !u!50 &1788700601
 Rigidbody2D:
   serializedVersion: 4
@@ -43140,7 +43150,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pointA: {fileID: 900972894}
   pointB: {fileID: 388038402}
-  speed: 2
+  speedUD: 2
+  speedRL: 0
 --- !u!50 &1810391154
 Rigidbody2D:
   serializedVersion: 4
@@ -44373,7 +44384,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pointA: {fileID: 487435960}
   pointB: {fileID: 1535198373}
-  speed: 2
+  speedUD: 2
+  speedRL: 0
 --- !u!50 &1909388520
 Rigidbody2D:
   serializedVersion: 4
@@ -44583,7 +44595,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pointA: {fileID: 1847733196}
   pointB: {fileID: 1430879057}
-  speed: 2
+  speedUD: 2
+  speedRL: 0
 --- !u!50 &1913383837
 Rigidbody2D:
   serializedVersion: 4
@@ -48205,7 +48218,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pointA: {fileID: 1740432951}
   pointB: {fileID: 351634944}
-  speed: 2
+  speedUD: 2
+  speedRL: 0
 --- !u!50 &2114662020
 Rigidbody2D:
   serializedVersion: 4
