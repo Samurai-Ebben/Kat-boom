@@ -46211,8 +46211,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pointA: {fileID: 1596600224}
   pointB: {fileID: 1076352554}
-  speedUD: 2
-  speedRL: 0
+  speedUD: 0
+  speedRL: 2
 --- !u!50 &1442406690
 Rigidbody2D:
   serializedVersion: 4
