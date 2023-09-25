@@ -81,10 +81,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        allStartingpoints.Add(startPointlvl1);
-        allStartingpoints.Add(startPointlvl2);
-        allStartingpoints.Add( startPointlvl3);
-
+        allStartingpoints = new List<Transform> { startPointlvl1, startPointlvl2,startPointlvl3 };
         diafst = GetComponent<DiaTrigger>();
         Invoke("DiaPlay", 0.01f);
         HUD.SetActive(true);
@@ -150,6 +147,12 @@ public class GameManager : MonoBehaviour
 
     }
 
+    private void UIUpdate()
+    {
+        ghostMeeterFill.fillAmount = player.GMamount;
+        scoreTxt.text = "Score: " + score.ToString();
+    }
+
     void ChangeValidtyLvl(int lvlNum)
     {
         if(lvlNum == 1)
@@ -157,66 +160,32 @@ public class GameManager : MonoBehaviour
             tut = false;
             lvl1 = true;
         }
-        else if(lvlNum == 2)
+        if(lvlNum == 2)
         {
             lvl1 = false;
             lvl2 = true;
         }
-        else if(lvlNum == 3)
+        if(lvlNum == 3)
         {
             lvl2 = false;
             lvl3 = true;
         }
     }
-    private void UIUpdate()
-    {
-        ghostMeeterFill.fillAmount = player.GMamount;
-        scoreTxt.text = "Score: " + score.ToString();
-    }
 
-    //public void NextLvl()
-    //{
-    //    levels[1].SetActive(true); //lvl2 active
-    //    player.Teleport(startPointlvl1.position);
-    //    var newCamPos = new Vector3(-0.08f, 0.3f, -10) - Camera.main.transform.position;
-    //    Camera.main.transform.Translate(newCamPos);
-    //    ChangeValidtyLvl(1);
-    //}
 
     public void NxtLvl(int currLvl, int nxtLvl)
     {
 
-        //lvl1 = new Vector3(-0.08f, 0.3f, -10)
-        //Vector3(22.1f, 0.3f, -10)
-        //Vector3(22.1f, 13.5f, -10)
-        List<Vector3> camPositions = new List<Vector3> { new Vector3(-0.08f, 0.3f, -10), new Vector3(22.1f, 0.3f, -10), new Vector3(22.1f, 13.5f, -10) };
+        List<Vector3> camPositions = new List<Vector3> { new Vector3(-0.08f, 0.3f, -10),
+            new Vector3(22.1f, 0.3f, -10), new Vector3(22.1f, 13.5f, -10) };
         levels[nxtLvl].SetActive(true);
         player.Teleport(allStartingpoints[nxtLvl-1].position);
-
         Camera.main.transform.position = camPositions[nxtLvl-1];
         if(currLvl != 0)
             levels[currLvl].SetActive(false);
         ChangeValidtyLvl(nxtLvl);
     }
 
-    //public void NextLvl2()
-    //{
-    //    levels[2].SetActive(true);
-    //    player.Teleport(startPointlvl2.position);
-
-    //    Camera.main.transform.position = new Vector3(22.1f, 0.3f, -10);
-    //    levels[1].SetActive(false);
-    //    ChangeValidtyLvl(3);
-    //}
-    //public void NextLvl3()
-    //{
-    //    levels[3].SetActive(true); //lvl2 active
-    //    player.Teleport(startPointlvl3.position);
-    //    Camera.main.transform.position = new Vector3(22.1f, 13.5f, -10);
-    //    levels[2].SetActive(false);
-    //    lvl2 = false;
-    //    lvl3 = true;
-    //}
 
 
     public IEnumerator Death()
