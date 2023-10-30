@@ -87,21 +87,17 @@ public class PlayerController : MonoBehaviour
     {
         //movePoint.position = transform.position;
         if(other.gameObject.layer == neverGoThrough)
-        {
             StartCoroutine(GameManager.Instance.Death());
-        }
+
         if (other.gameObject == GameManager.Instance.door1)
-        {
             GameManager.Instance.levelSystem.NxtLvl(1,2);
-        }
+
         if (other.gameObject == GameManager.Instance.door2)
-        {
             GameManager.Instance.levelSystem.NxtLvl(2,3);
-        }
+
         if(other.gameObject.tag == "explosion")
-        {
             StartCoroutine(GameManager.Instance.Death());
-        }
+
         if(other.gameObject.tag == "Enemy")
         {
             GameManager.Instance.batHurt = other.gameObject.GetComponent<AudioSource>();
@@ -114,10 +110,10 @@ public class PlayerController : MonoBehaviour
         }
         if (other.gameObject.tag == "DiaTrigger")
             GameManager.Instance.lastDia.TriggerDia();
+
         if (other.gameObject.tag == "Goal")
-        {
             GameManager.Instance.EndScreen("Victory");
-        }
+
     }
 
     public IEnumerator Transparent()

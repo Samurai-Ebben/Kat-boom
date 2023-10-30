@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     //SINGELTON
     public static GameManager Instance;
 
+    #region Refrenceses
     [Header("--REFS--")]
     public PlayerController player;
     public GameObject explosion;
@@ -23,7 +24,7 @@ public class GameManager : MonoBehaviour
     public DiaTrigger lastDia;
     private DiaTrigger diafst;
     public LevelSystem levelSystem;
-
+    #endregion
 
     public bool isDead = false;
 

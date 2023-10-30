@@ -32,6 +32,7 @@ public class LevelSystem : MonoBehaviour
     }
     void ChangeValidtyLvl(int lvlNum)
     {
+
         if (lvlNum == 1)
         {
             tut = false;
@@ -67,11 +68,22 @@ public class LevelSystem : MonoBehaviour
         List<Vector3> camPositions = new List<Vector3> { new Vector3(-0.08f, 0.3f, -10),
             new Vector3(22.1f, 0.3f, -10), new Vector3(22.1f, 13.5f, -10) };
         levels[nxtLvl].SetActive(true);
+        
         GameManager.Instance.player.Teleport(allStartingpoints[nxtLvl - 1].position);
-        Camera.main.transform.position = camPositions[nxtLvl - 1];
+
+        var camPos = Camera.main.transform.position;
+        Camera.main.transform.position = Vector3.MoveTowards(camPos, camPositions[nxtLvl - 1], float.MaxValue);
+
         if (currLvl != 0)
             levels[currLvl].SetActive(false);
+
         ChangeValidtyLvl(nxtLvl);
+
+    }
+
+    void StartNewLvl()
+    {
+        Time.timeScale = 1;
     }
 
 }
