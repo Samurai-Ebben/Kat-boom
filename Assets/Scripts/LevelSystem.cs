@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -21,6 +22,7 @@ public class LevelSystem : MonoBehaviour
     public bool lvl2 = false;
     public bool lvl3 = false;
 
+    bool moveCam = false;
 
     private void Start()
     {
@@ -30,24 +32,23 @@ public class LevelSystem : MonoBehaviour
             levels[i].SetActive(false);
         }
     }
+
     void ChangeValidtyLvl(int lvlNum)
     {
-
-        if (lvlNum == 1)
-        {
-            tut = false;
-            lvl1 = true;
-        }
-        if (lvlNum == 2)
-        {
-            lvl1 = false;
-            lvl2 = true;
-        }
-        if (lvlNum == 3)
-        {
-            lvl2 = false;
-            lvl3 = true;
-        }
+        switch(lvlNum){
+            case 1:
+                tut = false;
+                lvl1 = true;
+                break;
+            case 2:
+                lvl1 = false;
+                lvl2 = true;
+                break;
+            case 3:
+                lvl2 = false;
+                lvl3 = true;
+                break;
+        }                   
     }
 
     public void SwitchingLevels()
@@ -71,19 +72,13 @@ public class LevelSystem : MonoBehaviour
         
         GameManager.Instance.player.Teleport(allStartingpoints[nxtLvl - 1].position);
 
-        var camPos = Camera.main.transform.position;
-        Camera.main.transform.position = Vector3.MoveTowards(camPos, camPositions[nxtLvl - 1], float.MaxValue);
+        //var camPos = Camera.main.transform.position;
+        Camera.main.transform.position = camPositions[nxtLvl - 1];
 
         if (currLvl != 0)
             levels[currLvl].SetActive(false);
 
         ChangeValidtyLvl(nxtLvl);
-
-    }
-
-    void StartNewLvl()
-    {
-        Time.timeScale = 1;
     }
 
 }

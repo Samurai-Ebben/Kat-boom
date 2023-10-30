@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
     public GameObject DeadCat;
     public Leaderboard leaderboard;
     public GameObject victoryScreen;
-    public GameObject Gaol;
+    public GameObject Goal;
     public DiaTrigger lastDia;
     private DiaTrigger diafst;
     public LevelSystem levelSystem;
@@ -80,7 +80,7 @@ public class GameManager : MonoBehaviour
 
         door1.SetActive(false);
         door2.SetActive(false);
-        Gaol.SetActive(false);
+        Goal.SetActive(false);
         
     }
 
@@ -111,6 +111,10 @@ public class GameManager : MonoBehaviour
         if (countBoxesLvl0 < 1 && levelSystem.tut)
         {
             levelSystem.NxtLvl(0, 1);
+            var camPos = Camera.main.transform.position;
+
+            Camera.main.transform.position = Vector3.MoveTowards(camPos, new Vector3(-0.08f, 0.3f, -10), Time.deltaTime * 20);
+
         }
         if (countBoxesLvl1 < 1 && levelSystem.lvl1)
         {
@@ -130,7 +134,7 @@ public class GameManager : MonoBehaviour
         }
         if (countBoxesLvl3 < 1 && levelSystem.lvl3)
         {
-            Gaol.SetActive(true);
+            Goal.SetActive(true);
 
         }
     }
@@ -179,16 +183,23 @@ public class GameManager : MonoBehaviour
         StartCoroutine(leaderboard.SubmitScoreRoutine(score));
         player.canMove = false;
         title.text = text;
-        gameOverscrn.SetActive(true);
         HUD.SetActive(false);
         if (text == "Victory")
         {
-            score += 100;
+            AddScore(100);
             victoryScreen.SetActive(true);
         }
         else
             victoryScreen.SetActive(false);
+        gameOverscrn.SetActive(true);
 
+    }
+
+    public void AddScore(int scoreToAdd)
+    {
+        score += scoreToAdd;
+        scoreTxt.GetComponent<Animator>().Play("ScoreTxt");
+        //playAnim.
     }
 
     void DiaPlay()

@@ -41,6 +41,14 @@ public class BatPatrol : MonoBehaviour
             currentPoint = pointB.transform;
         }
     }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.gameObject.tag == "explosion")
+        {
+            GameManager.Instance.AddScore(150);
+            Destroy(gameObject);
+        }
+    }
 
 }
 

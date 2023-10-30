@@ -43,7 +43,7 @@ public class Collision : MonoBehaviour
         if(lvlNum == 3)
             GameManager.Instance.countBoxesLvl3--;
 
-        GameManager.Instance.score += 100;
+        GameManager.Instance.AddScore(100);
     }
 
 }
